@@ -655,95 +655,211 @@
   </section>
 
   <!-- FAQ -->
-<section class="faq-section" id="faq">
-  <div class="section-title-center">
-    <span class="section-badge">FAQ</span>
-    <h2>Questions fréquentes</h2>
-    <p class="section-subtitle">Toutes les réponses aux questions que les parents se posent.</p>
-  </div>
-
-  <div class="faq-container">
-    <div class="faq-item">
-      <button class="faq-question">
-        <span>Quels sont les documents nécessaires pour l'inscription ?</span>
-        <i class="fa-solid fa-chevron-down faq-icon"></i>
-      </button>
-      <div class="faq-answer">
-        <p>Vous aurez besoin de : extrait d'acte de naissance, bulletin de notes de l'année précédente, certificat de scolarité, 2 photos d'identité, et la fiche d'inscription remplie.</p>
-      </div>
+  <section class="faq-section" id="faq">
+    <div class="faq-header">
+      <span class="section-badge">FAQ</span>
+      <h2>Questions fréquentes</h2>
+      <p class="section-subtitle">Toutes les réponses aux questions que les parents se posent.</p>
     </div>
 
-    <div class="faq-item">
-      <button class="faq-question">
-        <span>Le concours d'entrée est-il obligatoire pour toutes les classes ?</span>
-        <i class="fa-solid fa-chevron-down faq-icon"></i>
-      </button>
-      <div class="faq-answer">
-        <p>Le concours d'entrée est obligatoire pour les classes de 6e, 5e et 4e. Pour les autres classes, l'admission se fait sur étude de dossier.</p>
-      </div>
-    </div>
+    <div class="faq-wrapper">
 
-    <div class="faq-item">
-      <button class="faq-question">
-        <span>Quels sont les frais de scolarité ?</span>
-        <i class="fa-solid fa-chevron-down faq-icon"></i>
-      </button>
-      <div class="faq-answer">
-        <p>Les frais varient selon la classe et la filière. Nous vous invitons à nous contacter directement pour recevoir la grille tarifaire complète de l'année en cours.</p>
+      <!-- Barre de recherche -->
+      <div class="faq-search-box">
+        <i class="fa-solid fa-magnifying-glass faq-search-icon"></i>
+        <input
+          type="text"
+          id="faqSearch"
+          class="faq-search-input"
+          placeholder="Rechercher une question..."
+          aria-label="Rechercher dans la FAQ"
+        >
+        <button class="faq-search-clear" id="faqSearchClear" aria-label="Effacer la recherche">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
       </div>
-    </div>
 
-    <div class="faq-item">
-      <button class="faq-question">
-        <span>Un bus scolaire est-il disponible ?</span>
-        <i class="fa-solid fa-chevron-down faq-icon"></i>
-      </button>
-      <div class="faq-answer">
-        <p>Oui, un service de bus scolaire est disponible pour les élèves. Les tarifs varient entre 15 000 et 20 000 FCFA par mois selon la classe et l'itinéraire.</p>
+      <!-- Filtres par catégorie -->
+      <div class="faq-categories">
+        <button class="faq-cat-btn active" data-category="all">
+          <i class="fa-solid fa-layer-group"></i> Toutes
+        </button>
+        <button class="faq-cat-btn" data-category="inscription">
+          <i class="fa-solid fa-file-pen"></i> Inscription
+        </button>
+        <button class="faq-cat-btn" data-category="scolarite">
+          <i class="fa-solid fa-coins"></i> Scolarité
+        </button>
+        <button class="faq-cat-btn" data-category="vie">
+          <i class="fa-solid fa-school"></i> Vie scolaire
+        </button>
+        <button class="faq-cat-btn" data-category="examens">
+          <i class="fa-solid fa-graduation-cap"></i> Examens
+        </button>
       </div>
-    </div>
 
-    <div class="faq-item">
-      <button class="faq-question">
-        <span>L'établissement est-il bilingue ?</span>
-        <i class="fa-solid fa-chevron-down faq-icon"></i>
-      </button>
-      <div class="faq-answer">
-        <p>Oui, le Collège Bilingue Pékékudé propose un enseignement bilingue français-anglais, encadré par des enseignants qualifiés dans les deux langues.</p>
-      </div>
-    </div>
+      <!-- Compteur de résultats -->
+      <p class="faq-counter" id="faqCounter">
+        <i class="fa-solid fa-circle-info"></i>
+        <span id="faqCounterText">8 questions disponibles</span>
+      </p>
 
-    <div class="faq-item">
-      <button class="faq-question">
-        <span>Y a-t-il une cantine scolaire ?</span>
-        <i class="fa-solid fa-chevron-down faq-icon"></i>
-      </button>
-      <div class="faq-answer">
-        <p>Oui, une cantine scolaire est disponible sur le campus, proposant des repas équilibrés à prix abordable pour tous les élèves.</p>
-      </div>
-    </div>
+      <!-- Liste des questions -->
+      <div class="faq-container" id="faqContainer">
 
-    <div class="faq-item">
-      <button class="faq-question">
-        <span>Quels sont les horaires de cours ?</span>
-        <i class="fa-solid fa-chevron-down faq-icon"></i>
-      </button>
-      <div class="faq-answer">
-        <p>Les cours se déroulent du lundi au vendredi, de 7h30 à 16h00. Des activités parascolaires sont proposées en fin de journée.</p>
-      </div>
-    </div>
+        <!-- Q1 - Inscription -->
+        <div class="faq-item" data-category="inscription" data-keywords="documents acte naissance bulletin inscription dossier">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">
+              <span class="faq-tag tag-inscription">Inscription</span>
+              Quels sont les documents nécessaires pour l'inscription ?
+            </span>
+            <span class="faq-toggle" aria-hidden="true">
+              <i class="fa-solid fa-plus"></i>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Vous aurez besoin de : extrait d'acte de naissance, bulletin de notes de l'année précédente, certificat de scolarité, 2 photos d'identité, et la fiche d'inscription remplie.</p>
+          </div>
+        </div>
 
-    <div class="faq-item">
-      <button class="faq-question">
-        <span>Comment se déroule la procédure d'inscription ?</span>
-        <i class="fa-solid fa-chevron-down faq-icon"></i>
-      </button>
-      <div class="faq-answer">
-        <p>La procédure se déroule en 3 étapes : (1) retrait et dépôt du dossier d'inscription, (2) passage du concours d'entrée (pour 6e, 5e, 4e), (3) confirmation de l'admission et règlement des frais.</p>
+        <!-- Q2 - Inscription -->
+        <div class="faq-item" data-category="inscription" data-keywords="concours entrée obligatoire 6e 5e 4e admission">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">
+              <span class="faq-tag tag-inscription">Inscription</span>
+              Le concours d'entrée est-il obligatoire pour toutes les classes ?
+            </span>
+            <span class="faq-toggle" aria-hidden="true">
+              <i class="fa-solid fa-plus"></i>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Le concours d'entrée est obligatoire pour les classes de 6e, 5e et 4e. Pour les autres classes, l'admission se fait sur étude de dossier.</p>
+          </div>
+        </div>
+
+        <!-- Q3 - Inscription -->
+        <div class="faq-item" data-category="inscription" data-keywords="procédure inscription étapes dossier admission">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">
+              <span class="faq-tag tag-inscription">Inscription</span>
+              Comment se déroule la procédure d'inscription ?
+            </span>
+            <span class="faq-toggle" aria-hidden="true">
+              <i class="fa-solid fa-plus"></i>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>La procédure se déroule en 3 étapes : (1) retrait et dépôt du dossier d'inscription, (2) passage du concours d'entrée (pour 6e, 5e, 4e), (3) confirmation de l'admission et règlement des frais.</p>
+          </div>
+        </div>
+
+        <!-- Q4 - Scolarité -->
+        <div class="faq-item" data-category="scolarite" data-keywords="frais scolarité tarifs prix paiement">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">
+              <span class="faq-tag tag-scolarite">Scolarité</span>
+              Quels sont les frais de scolarité ?
+            </span>
+            <span class="faq-toggle" aria-hidden="true">
+              <i class="fa-solid fa-plus"></i>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Les frais varient selon la classe et la filière. Nous vous invitons à nous contacter directement pour recevoir la grille tarifaire complète de l'année en cours.</p>
+          </div>
+        </div>
+
+        <!-- Q5 - Scolarité -->
+        <div class="faq-item" data-category="scolarite" data-keywords="cantine repas nourriture prix">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">
+              <span class="faq-tag tag-scolarite">Scolarité</span>
+              Y a-t-il une cantine scolaire ?
+            </span>
+            <span class="faq-toggle" aria-hidden="true">
+              <i class="fa-solid fa-plus"></i>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Oui, une cantine scolaire est disponible sur le campus, proposant des repas équilibrés à prix abordable pour tous les élèves.</p>
+          </div>
+        </div>
+
+        <!-- Q6 - Vie scolaire -->
+        <div class="faq-item" data-category="vie" data-keywords="bus transport scolaire itinéraire tarif">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">
+              <span class="faq-tag tag-vie">Vie scolaire</span>
+              Un bus scolaire est-il disponible ?
+            </span>
+            <span class="faq-toggle" aria-hidden="true">
+              <i class="fa-solid fa-plus"></i>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Oui, un service de bus scolaire est disponible pour les élèves. Les tarifs varient entre 15 000 et 20 000 FCFA par mois selon la classe et l'itinéraire.</p>
+          </div>
+        </div>
+
+        <!-- Q7 - Vie scolaire -->
+        <div class="faq-item" data-category="vie" data-keywords="bilingue anglais français langue enseignement">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">
+              <span class="faq-tag tag-vie">Vie scolaire</span>
+              L'établissement est-il bilingue ?
+            </span>
+            <span class="faq-toggle" aria-hidden="true">
+              <i class="fa-solid fa-plus"></i>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Oui, le Collège Bilingue Pékékudé propose un enseignement bilingue français-anglais, encadré par des enseignants qualifiés dans les deux langues.</p>
+          </div>
+        </div>
+
+        <!-- Q8 - Examens -->
+        <div class="faq-item" data-category="examens" data-keywords="horaires cours heures emploi du temps">
+          <button class="faq-question" aria-expanded="false">
+            <span class="faq-question-text">
+              <span class="faq-tag tag-examens">Examens</span>
+              Quels sont les horaires de cours ?
+            </span>
+            <span class="faq-toggle" aria-hidden="true">
+              <i class="fa-solid fa-plus"></i>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Les cours se déroulent du lundi au vendredi, de 7h30 à 16h00. Des activités parascolaires sont proposées en fin de journée.</p>
+          </div>
+        </div>
+
       </div>
+
+      <!-- Message aucun résultat -->
+      <div class="faq-empty" id="faqEmpty" style="display:none;">
+        <i class="fa-solid fa-magnifying-glass-minus"></i>
+        <p>Aucune question ne correspond à votre recherche.</p>
+        <span>Essayez un autre mot-clé ou choisissez une autre catégorie.</span>
+      </div>
+
+      <!-- Encart CTA "Vous ne trouvez pas ?" -->
+      <div class="faq-cta">
+        <div class="faq-cta-icon">
+          <i class="fa-solid fa-comments"></i>
+        </div>
+        <div class="faq-cta-text">
+          <h3>Vous ne trouvez pas votre réponse ?</h3>
+          <p>Notre équipe est disponible du lundi au vendredi, de 7h30 à 16h00.</p>
+        </div>
+        <a href="#contact" class="faq-cta-btn">
+          Nous contacter <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
     </div>
-  </div>
-</section>
+  </section>
 
 
     <!-- FOOTER AVEC VAGUE HAUTE -->

@@ -108,19 +108,121 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 5. FAQ ACCORDÉON
+  // 5. FAQ ACCORDÉON AMÉLIORÉ (recherche + catégories + filtres)
   const faqItems = document.querySelectorAll('.faq-item');
+  const faqSearch = document.getElementById('faqSearch');
+  const faqSearchClear = document.getElementById('faqSearchClear');
+  const faqCatBtns = document.querySelectorAll('.faq-cat-btn');
+  const faqEmpty = document.getElementById('faqEmpty');
+  const faqCounterText = document.getElementById('faqCounterText');
 
+  let activeCategory = 'all';
+  let searchQuery = '';
+
+  // --- 5.1 Accordéon (ouverture / fermeture) ---
   faqItems.forEach(item => {
     const question = item.querySelector('.faq-question');
     if (question) {
       question.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+
+        // Ferme tous les autres
         faqItems.forEach(other => {
-          if (other !== item) other.classList.remove('open');
+          if (other !== item) {
+            other.classList.remove('open');
+            const q = other.querySelector('.faq-question');
+            if (q) q.setAttribute('aria-expanded', 'false');
+          }
         });
+
+        // Bascule l'état
         item.classList.toggle('open');
+        question.setAttribute('aria-expanded', !isOpen);
       });
     }
+  });
+
+  // --- 5.2 Filtrage combiné (catégorie + recherche) ---
+  function filterFaq() {
+    let visibleCount = 0;
+
+    faqItems.forEach(item => {
+      const category = item.getAttribute('data-category');
+      const keywords = (item.getAttribute('data-keywords') || '').toLowerCase();
+      const questionText = item.querySelector('.faq-question-text').textContent.toLowerCase();
+      const answerText = item.querySelector('.faq-answer').textContent.toLowerCase();
+
+      const matchesCategory = activeCategory === 'all' || category === activeCategory;
+      const matchesSearch =
+        searchQuery === '' ||
+        keywords.includes(searchQuery) ||
+        questionText.includes(searchQuery) ||
+        answerText.includes(searchQuery);
+
+      if (matchesCategory && matchesSearch) {
+        item.style.display = '';
+        // Animation d'apparition
+        item.style.animation = 'none';
+        void item.offsetWidth;
+        item.style.animation = 'fadeIn 0.3s ease';
+        visibleCount++;
+      } else {
+        item.style.display = 'none';
+        item.classList.remove('open');
+        const q = item.querySelector('.faq-question');
+        if (q) q.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Message "aucun résultat"
+    if (faqEmpty) {
+      faqEmpty.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    // Mise à jour du compteur
+    if (faqCounterText) {
+      if (visibleCount === 0) {
+        faqCounterText.textContent = 'Aucune question trouvée';
+      } else if (visibleCount === 1) {
+        faqCounterText.textContent = '1 question disponible';
+      } else {
+        faqCounterText.textContent = `${visibleCount} questions disponibles`;
+      }
+    }
+  }
+
+  // --- 5.3 Écoute de la recherche ---
+  if (faqSearch) {
+    faqSearch.addEventListener('input', (e) => {
+      searchQuery = e.target.value.trim().toLowerCase();
+
+      if (faqSearchClear) {
+        faqSearchClear.classList.toggle('visible', searchQuery.length > 0);
+      }
+
+      filterFaq();
+    });
+  }
+
+  // --- 5.4 Effacer la recherche ---
+  if (faqSearchClear) {
+    faqSearchClear.addEventListener('click', () => {
+      faqSearch.value = '';
+      searchQuery = '';
+      faqSearchClear.classList.remove('visible');
+      faqSearch.focus();
+      filterFaq();
+    });
+  }
+
+  // --- 5.5 Filtres par catégorie ---
+  faqCatBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      faqCatBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCategory = btn.getAttribute('data-category');
+      filterFaq();
+    });
   });
 
   // 6. ONGLETS PREPARATION INSCRIPTION
@@ -143,7 +245,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // 7. SÉLECTEUR DE LANGUE FR / EN
   const langButtons = document.querySelectorAll('.lang-btn');
 
-  // Dictionnaire de traduction — étends-le selon tes besoins
   const translations = {
     fr: {
       accueil: 'Accueil',
@@ -163,7 +264,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Charge la langue mémorisée (ou 'fr' par défaut)
   const savedLang = localStorage.getItem('cbp-lang') || 'fr';
   applyLang(savedLang);
 
@@ -176,12 +276,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function applyLang(lang) {
-    // Met à jour l'état actif de tous les boutons (navbar + mobile)
     langButtons.forEach(b => {
       b.classList.toggle('active', b.getAttribute('data-lang') === lang);
     });
 
-    // Traduction basique des éléments marqués avec data-i18n
     const map = translations[lang] || translations.fr;
 
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -191,7 +289,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Met à jour l'attribut lang de la page
     document.documentElement.setAttribute('lang', lang);
   }
 
