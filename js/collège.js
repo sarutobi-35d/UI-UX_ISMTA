@@ -126,7 +126,6 @@ document.addEventListener('DOMContentLoaded', () => {
       question.addEventListener('click', () => {
         const isOpen = item.classList.contains('open');
 
-        // Ferme tous les autres
         faqItems.forEach(other => {
           if (other !== item) {
             other.classList.remove('open');
@@ -135,7 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
 
-        // Bascule l'état
         item.classList.toggle('open');
         question.setAttribute('aria-expanded', !isOpen);
       });
@@ -161,7 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (matchesCategory && matchesSearch) {
         item.style.display = '';
-        // Animation d'apparition
         item.style.animation = 'none';
         void item.offsetWidth;
         item.style.animation = 'fadeIn 0.3s ease';
@@ -174,12 +171,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Message "aucun résultat"
     if (faqEmpty) {
       faqEmpty.style.display = visibleCount === 0 ? 'block' : 'none';
     }
 
-    // Mise à jour du compteur
     if (faqCounterText) {
       if (visibleCount === 0) {
         faqCounterText.textContent = 'Aucune question trouvée';
@@ -290,6 +285,161 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.documentElement.setAttribute('lang', lang);
+  }
+
+  // 8. FORMULAIRE DE CONTACT → WHATSAPP
+  const whatsappForm = document.getElementById('whatsappForm');
+
+  // 🔴 REMPLACE ce numéro par le numéro WhatsApp réel de l'établissement
+  // Format international SANS le "+" ni espaces : ex "237699123655"
+  const WHATSAPP_NUMBER = '237699123655';
+
+  if (whatsappForm) {
+    const nameInput = document.getElementById('cf-name');
+    const phoneInput = document.getElementById('cf-phone');
+    const roleSelect = document.getElementById('cf-role');
+    const classSelect = document.getElementById('cf-class');
+    const subjectSelect = document.getElementById('cf-subject');
+    const messageInput = document.getElementById('cf-message');
+    const charCount = document.getElementById('cf-char-count');
+    const submitBtn = whatsappForm.querySelector('.btn-whatsapp');
+
+    // --- Compteur de caractères ---
+    if (messageInput && charCount) {
+      messageInput.addEventListener('input', () => {
+        const len = messageInput.value.length;
+        charCount.textContent = len;
+        charCount.classList.remove('warn', 'max');
+
+        if (len >= 580) {
+          charCount.classList.add('max');
+        } else if (len >= 480) {
+          charCount.classList.add('warn');
+        }
+      });
+    }
+
+    // --- Validation en direct : retire l'erreur quand on tape ---
+    [nameInput, phoneInput, roleSelect, subjectSelect, messageInput].forEach(field => {
+      if (!field) return;
+      const event = field.tagName === 'SELECT' ? 'change' : 'input';
+      field.addEventListener(event, () => {
+        field.closest('.form-group').classList.remove('has-error');
+        const errorSpan = whatsappForm.querySelector(`[data-error-for="${field.id}"]`);
+        if (errorSpan) errorSpan.textContent = '';
+      });
+    });
+
+    // --- Fonction de validation ---
+    function validateForm() {
+      let isValid = true;
+      const errors = {};
+
+      if (!nameInput.value.trim() || nameInput.value.trim().length < 2) {
+        errors['cf-name'] = 'Veuillez entrer votre nom complet.';
+        isValid = false;
+      }
+
+      const phoneClean = phoneInput.value.replace(/[\s\-\.\(\)]/g, '');
+      if (!phoneClean || phoneClean.length < 8) {
+        errors['cf-phone'] = 'Veuillez entrer un numéro valide.';
+        isValid = false;
+      }
+
+      if (!roleSelect.value) {
+        errors['cf-role'] = 'Veuillez préciser qui vous êtes.';
+        isValid = false;
+      }
+
+      if (!subjectSelect.value) {
+        errors['cf-subject'] = 'Veuillez choisir un objet.';
+        isValid = false;
+      }
+
+      if (!messageInput.value.trim() || messageInput.value.trim().length < 10) {
+        errors['cf-message'] = 'Votre message doit contenir au moins 10 caractères.';
+        isValid = false;
+      }
+
+      Object.keys(errors).forEach(fieldId => {
+        const field = document.getElementById(fieldId);
+        if (field) {
+          field.closest('.form-group').classList.add('has-error');
+          const errorSpan = whatsappForm.querySelector(`[data-error-for="${fieldId}"]`);
+          if (errorSpan) errorSpan.textContent = errors[fieldId];
+        }
+      });
+
+      if (!isValid) {
+        const firstError = whatsappForm.querySelector('.form-group.has-error input, .form-group.has-error select, .form-group.has-error textarea');
+        if (firstError) firstError.focus();
+      }
+
+      return isValid;
+    }
+
+    // --- Soumission du formulaire ---
+    whatsappForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      if (!validateForm()) return;
+
+      submitBtn.classList.add('loading');
+
+      const nom = nameInput.value.trim();
+      const tel = phoneInput.value.trim();
+      const role = roleSelect.value;
+      const classe = classSelect.value || 'Non précisée';
+      const objet = subjectSelect.value;
+      const message = messageInput.value.trim();
+
+      const lines = [
+        '*NOUVELLE DEMANDE — Collège Bilingue Pékékudé*',
+        '',
+        `👤 *Nom :* ${nom}`,
+        `📞 *Téléphone :* ${tel}`,
+        `🙋 *Statut :* ${role}`,
+        `🎓 *Classe :* ${classe}`,
+        `📌 *Objet :* ${objet}`,
+        '',
+        '💬 *Message :*',
+        message,
+        '',
+        '_Envoyé depuis le site web du CBP_'
+      ];
+
+      const fullMessage = lines.join('\n');
+      const encodedMessage = encodeURIComponent(fullMessage);
+      const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+
+      setTimeout(() => {
+        window.open(whatsappURL, '_blank');
+
+        submitBtn.classList.remove('loading');
+        showSuccessMessage();
+
+        whatsappForm.reset();
+        if (charCount) charCount.textContent = '0';
+        charCount.classList.remove('warn', 'max');
+      }, 400);
+    });
+
+    // --- Message de succès ---
+    function showSuccessMessage() {
+      const success = document.createElement('div');
+      success.className = 'form-success show';
+      success.innerHTML = `
+        <i class="fa-solid fa-circle-check"></i>
+        <span>Votre message a été préparé ! WhatsApp va s'ouvrir dans un instant.</span>
+      `;
+
+      whatsappForm.insertBefore(success, whatsappForm.firstChild);
+
+      setTimeout(() => {
+        success.classList.remove('show');
+        setTimeout(() => success.remove(), 400);
+      }, 5000);
+    }
   }
 
 });

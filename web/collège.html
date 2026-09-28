@@ -29,6 +29,7 @@
         <a href="#programmes" data-i18n="programmes">Nos programmes</a>
         <a href="#galerie" data-i18n="galerie">Galerie</a>
         <a href="#faq" data-i18n="faq">FAQ</a>
+        <a href="#contact" data-i18n="contact">Contact</a>
 
         <!-- 🟢 SÉLECTEUR DE LANGUE (Mobile) -->
         <div class="lang-switcher lang-switcher-mobile">
@@ -860,6 +861,180 @@
 
     </div>
   </section>
+
+  <!-- CONTACT / INSCRIPTION VIA WHATSAPP -->
+<section class="contact-section" id="contact">
+  <div class="contact-header">
+    <span class="section-badge">CONTACT</span>
+    <h2>Écrivez-nous sur WhatsApp</h2>
+    <p class="section-subtitle">Remplissez le formulaire ci-dessous, votre message sera envoyé directement via WhatsApp à notre secrétariat.</p>
+  </div>
+
+  <div class="contact-wrapper">
+
+    <!-- Colonne gauche : infos pratiques -->
+    <div class="contact-info-col">
+      <div class="contact-info-card">
+        <div class="contact-info-icon">
+          <i class="fa-solid fa-headset"></i>
+        </div>
+        <h3>Nos coordonnées</h3>
+        <p class="contact-info-desc">Notre équipe est à votre écoute du lundi au vendredi.</p>
+
+        <ul class="contact-info-list">
+          <li>
+            <div class="contact-info-list-icon"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <strong>Téléphone</strong>
+              <span>+237 6 96 42 96 48</span>
+            </div>
+          </li>
+          <li>
+            <div class="contact-info-list-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <div>
+              <strong>WhatsApp</strong>
+              <span>+237 6 99 12 36 55</span>
+            </div>
+          </li>
+          <li>
+            <div class="contact-info-list-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <strong>Email</strong>
+              <span>contact@cbp-cm.com</span>
+            </div>
+          </li>
+          <li>
+            <div class="contact-info-list-icon"><i class="fa-solid fa-clock"></i></div>
+            <div>
+              <strong>Horaires</strong>
+              <span>Lun - Ven : 7h30 - 16h00</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="contact-quote-card">
+        <i class="fa-solid fa-quote-left contact-quote-icon"></i>
+        <p>Nous répondons généralement en moins de 2 heures pendant les heures d'ouverture.</p>
+      </div>
+    </div>
+
+    <!-- Colonne droite : formulaire -->
+    <form class="contact-form" id="whatsappForm" novalidate>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="cf-name">
+            <i class="fa-solid fa-user"></i> Nom complet <span class="required">*</span>
+          </label>
+          <input
+            type="text"
+            id="cf-name"
+            name="name"
+            placeholder="Ex : Marie Nkomo"
+            required
+            autocomplete="name"
+          >
+          <span class="form-error" data-error-for="cf-name"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="cf-phone">
+            <i class="fa-solid fa-phone"></i> Téléphone <span class="required">*</span>
+          </label>
+          <input
+            type="tel"
+            id="cf-phone"
+            name="phone"
+            placeholder="Ex : +237 6 XX XX XX XX"
+            required
+            autocomplete="tel"
+          >
+          <span class="form-error" data-error-for="cf-phone"></span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="cf-role">
+            <i class="fa-solid fa-users"></i> Vous êtes <span class="required">*</span>
+          </label>
+          <select id="cf-role" name="role" required>
+            <option value="">— Choisir —</option>
+            <option value="Parent d'élève">Parent d'élève</option>
+            <option value="Élève">Élève</option>
+            <option value="Tuteur / Tutrice">Tuteur / Tutrice</option>
+            <option value="Autre">Autre</option>
+          </select>
+          <span class="form-error" data-error-for="cf-role"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="cf-class">
+            <i class="fa-solid fa-graduation-cap"></i> Classe concernée
+          </label>
+          <select id="cf-class" name="class">
+            <option value="">— Aucune / Non précisée —</option>
+            <option value="6e">6e</option>
+            <option value="5e">5e</option>
+            <option value="4e">4e</option>
+            <option value="3e">3e</option>
+            <option value="2nde">2nde</option>
+            <option value="1ère">1ère</option>
+            <option value="Terminale">Terminale</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="cf-subject">
+          <i class="fa-solid fa-tag"></i> Objet de votre demande <span class="required">*</span>
+        </label>
+        <select id="cf-subject" name="subject" required>
+          <option value="">— Choisir un objet —</option>
+          <option value="Inscription">Inscription</option>
+          <option value="Concours d'entrée">Concours d'entrée</option>
+          <option value="Frais de scolarité">Frais de scolarité</option>
+          <option value="Transport scolaire">Transport scolaire</option>
+          <option value="Cantine">Cantine</option>
+          <option value="Rendez-vous">Demande de rendez-vous</option>
+          <option value="Autre">Autre</option>
+        </select>
+        <span class="form-error" data-error-for="cf-subject"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="cf-message">
+          <i class="fa-solid fa-message"></i> Votre message <span class="required">*</span>
+        </label>
+        <textarea
+          id="cf-message"
+          name="message"
+          rows="5"
+          placeholder="Écrivez ici votre message..."
+          required
+          maxlength="600"
+        ></textarea>
+        <div class="form-char-count">
+          <span id="cf-char-count">0</span> / 600 caractères
+        </div>
+        <span class="form-error" data-error-for="cf-message"></span>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i>
+          Envoyer via WhatsApp
+        </button>
+        <p class="form-note">
+          <i class="fa-solid fa-lock"></i>
+          En cliquant, WhatsApp s'ouvrira avec votre message pré-rempli.
+        </p>
+      </div>
+
+    </form>
+  </div>
+</section>
 
 
     <!-- FOOTER AVEC VAGUE HAUTE -->
