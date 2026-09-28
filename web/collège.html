@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collège Bilingue Pékékudé</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/collège.css">
+</head>
+<body>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="navbar-wrapper">
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-graduation-cap logo-icon"></i>
+        <span>Collège Bilingue Pékékudé</span>
+      </div>
+
+      <!-- Liens desktop & mobile -->
+      <div class="nav-links" id="navLinks">
+        <a href="#accueil" class="active" data-i18n="accueil">Accueil</a>
+        <a href="#about" data-i18n="apropos">À propos</a>
+        <a href="#programmes" data-i18n="programmes">Nos programmes</a>
+        <a href="#galerie" data-i18n="galerie">Galerie</a>
+        <a href="#faq" data-i18n="faq">FAQ</a>
+
+        <!-- 🟢 SÉLECTEUR DE LANGUE (Mobile) -->
+        <div class="lang-switcher lang-switcher-mobile">
+          <button class="lang-btn active" data-lang="fr">FR</button>
+          <span class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+
+        <!-- 🟢 NOUVEAU : Bouton Inscription dans la liste déroulante (Mobile uniquement) -->
+        <a href="#inscription" class="btn-inscription btn-mobile-only" data-i18n="inscription">Inscription</a>
+      </div>
+
+      <div class="nav-right">
+
+        <div class="location-badge">
+          <i class="fa-solid fa-location-dot"></i> Foumban, Cameroun
+        </div>
+
+        <!-- 🟢 SÉLECTEUR DE LANGUE FR / EN -->
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="fr">FR</button>
+          <span class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+
+        <!-- 🟢 MODIFIÉ : Ajout de la classe "btn-desktop-only" pour le cacher sur mobile -->
+        <a href="#inscription" class="btn-inscription btn-desktop-only">Inscription</a>
+
+        <!-- Bouton Menu Hamburger (Mobile) -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+      </div>
+
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section" id="accueil">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-subtitle">Discipline • Excellence • Réussite</span>
+      <h1>Collège Bilingue<br>Pékékudé</h1>
+      <p class="hero-description">Une formation de qualité pour construire votre avenir.</p>
+
+      <div class="hero-info-pills">
+        <span class="pill"><i class="fa-solid fa-location-dot"></i> Foumban, Cameroun</span>
+        <span class="pill"><i class="fa-solid fa-graduation-cap"></i> De la 6e à la Terminale</span>
+      </div>
+
+      <div class="hero-buttons">
+        <a href="#about" class="btn-primary">Découvrir notre établissement <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#contact" class="btn-outline">Nous contacter <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+   <!-- SÉPARATEUR EN VAGUE ACCENTUÉE (HERO) -->
+    <div class="hero-wave">
+        <svg viewBox="0 0 1440 160" preserveAspectRatio="none">
+        <path d="M0,32 C180,120 360,0 540,64 C720,128 900,16 1080,80 C1260,144 1380,48 1440,32 L1440,161 L0,161 Z" fill="#eaf4ed"></path>
+        </svg>
+    </div>
+
+  </section>
+
+  <!-- CONCOURS D'ENTREE -->
+  <section class="concours-section">
+    <div class="concours-container">
+      <div class="concours-left">
+        <span class="section-badge">CONCOURS D'ENTRÉE</span>
+        <h2>Rejoignez le Collège Bilingue Pékékudé</h2>
+        <p class="section-desc">
+          L'admission au Collège Bilingue Pékékudé se fait par un concours d'entrée, organisé chaque année. Ce concours est obligatoire pour les classes de 6e, 5e et 4e.
+        </p>
+
+        <div class="class-cards">
+          <div class="class-card">
+            <div class="card-icon"><i class="fa-solid fa-user-graduate"></i></div>
+            <div class="card-info">
+              <h3>6<sup>e</sup></h3>
+              <p>Concours d'entrée obligatoire</p>
+            </div>
+          </div>
+          <div class="class-card">
+            <div class="card-icon"><i class="fa-solid fa-book-open"></i></div>
+            <div class="card-info">
+              <h3>5<sup>e</sup></h3>
+              <p>Concours d'entrée obligatoire</p>
+            </div>
+          </div>
+          <div class="class-card">
+            <div class="card-icon"><i class="fa-solid fa-star"></i></div>
+            <div class="card-info">
+              <h3>4<sup>e</sup></h3>
+              <p>Concours d'entrée obligatoire</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="#concours" class="btn-dark-green">En savoir plus sur le concours <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+
+      <div class="concours-right">
+        <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=800&auto=format&fit=crop" alt="Élèves en classe">
+          <div class="note-bubble">
+            <p>Un concours pour un avenir solide !</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOS PROGRAMMES -->
+    <section class="programmes-section" id="programmes">
+    <div class="section-title-center">
+        <span class="section-badge">NOS PROGRAMMES</span>
+        <h2>Des filières adaptées à chaque ambition</h2>
+        <p class="section-subtitle">Un enseignement bilingue (français / anglais) conforme au programme officiel du MINESEC.</p>
+    </div>
+
+    <div class="programmes-grid">
+        <div class="programme-card">
+        <div class="programme-icon"><i class="fa-solid fa-flask"></i></div>
+        <h3>Série Scientifique</h3>
+        <p>Mathématiques, Physique-Chimie, Sciences de la Vie et de la Terre, Informatique.</p>
+        <ul class="programme-list">
+            <li><i class="fa-solid fa-check"></i> Laboratoires équipés</li>
+            <li><i class="fa-solid fa-check"></i> Préparation BAC C & D</li>
+            <li><i class="fa-solid fa-check"></i> Concours d'entrée aux grandes écoles</li>
+        </ul>
+        </div>
+
+        <div class="programme-card">
+        <div class="programme-icon"><i class="fa-solid fa-book"></i></div>
+        <h3>Série Littéraire</h3>
+        <p>Français, Anglais, Philosophie, Histoire-Géographie, Littérature.</p>
+        <ul class="programme-list">
+            <li><i class="fa-solid fa-check"></i> Expression écrite & orale renforcée</li>
+            <li><i class="fa-solid fa-check"></i> Préparation BAC A</li>
+            <li><i class="fa-solid fa-check"></i> Club débat & journalisme</li>
+        </ul>
+        </div>
+
+        <div class="programme-card">
+        <div class="programme-icon"><i class="fa-solid fa-language"></i></div>
+        <h3>Filière Bilingue</h3>
+        <p>Cursus francophone et anglophone avec un tronc commun renforcé.</p>
+        <ul class="programme-list">
+            <li><i class="fa-solid fa-check"></i> Immersion en anglais</li>
+            <li><i class="fa-solid fa-check"></i> Certifications internationales</li>
+            <li><i class="fa-solid fa-check"></i> Échanges interculturels</li>
+        </ul>
+        </div>
+
+        <div class="programme-card">
+        <div class="programme-icon"><i class="fa-solid fa-briefcase"></i></div>
+        <h3>Série Gestion / Commerciale</h3>
+        <p>Économie, Comptabilité, Droit, Gestion des entreprises.</p>
+        <ul class="programme-list">
+            <li><i class="fa-solid fa-check"></i> Préparation BAC G</li>
+            <li><i class="fa-solid fa-check"></i> Stages en entreprise</li>
+            <li><i class="fa-solid fa-check"></i> Initiation à l'entrepreneuriat</li>
+        </ul>
+        </div>
+    </div>
+    </section>
+
+  <!-- A PROPOS & ATOUTS -->
+  <section class="about-section" id="about">
+    <div class="about-container">
+      <div class="about-top">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800&auto=format&fit=crop" alt="Bâtiment Collège Bilingue Pékékudé">
+        </div>
+        <div class="about-text">
+          <span class="section-badge">A PROPOS DE NOUS</span>
+          <h2>Bienvenue au<br>Collège Bilingue Pékékudé</h2>
+          <p>
+            Le Collège Bilingue Pékékudé est un établissement d'enseignement secondaire reconnu par les autorités éducatives du Cameroun et bénéficie de l'agrément du Ministère de l'Enseignement Secondaire.
+          </p>
+          <p>
+            Notre mission est d'offrir une formation de qualité, bilingue et équilibrée, qui permet à chaque élève de développer ses compétences académiques, humaines et citoyennes.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-bottom-grid">
+        <div class="atouts-box">
+          <h3>Nos Atouts</h3>
+          <ul class="atouts-list">
+            <li>
+              <div class="atout-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+              <div><strong>Des enseignants qualifiés</strong> et passionnés par leur métier</div>
+            </li>
+            <li>
+              <div class="atout-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <div><strong>Un cadre agréable</strong> et sécurisé</div>
+            </li>
+            <li>
+              <div class="atout-icon"><i class="fa-solid fa-microscope"></i></div>
+              <div><strong>Des infrastructures modernes</strong> et bien équipées</div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="classes-box">
+          <div class="classes-header">
+            <div class="classes-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div>
+              <h3>Nos Classes</h3>
+              <p>Nous accueillons les élèves de la 6e jusqu'en Terminale, avec un encadrement pédagogique de qualité.</p>
+            </div>
+          </div>
+          <div class="class-tags">
+            <span class="tag">6e</span>
+            <span class="tag">5e</span>
+            <span class="tag">4e</span>
+            <span class="tag">3e</span>
+            <span class="tag">2nde</span>
+            <span class="tag">1ère</span>
+            <span class="tag">Terminale</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PREPARER SON INSCRIPTION -->
+<section class="preparation-section" id="preparation">
+  <div class="section-title-center">
+    <span class="section-badge">PRÉPARER SON INSCRIPTION</span>
+    <h2>Ce dont vous aurez besoin pour chaque classe</h2>
+    <p class="section-subtitle">Une check-list complète pour préparer la rentrée de votre enfant en toute sérénité.</p>
+  </div>
+
+  <!-- ONGLETS PAR CLASSE -->
+  <div class="preparation-tabs">
+    <button class="tab-btn active" data-tab="6e">6e</button>
+    <button class="tab-btn" data-tab="5e">5e</button>
+    <button class="tab-btn" data-tab="4e">4e</button>
+    <button class="tab-btn" data-tab="3e">3e</button>
+    <button class="tab-btn" data-tab="2nde">2nde</button>
+    <button class="tab-btn" data-tab="1ere">1ère</button>
+    <button class="tab-btn" data-tab="terminale">Terminale</button>
+  </div>
+
+  <div class="preparation-content-wrapper">
+    <!-- 6e -->
+    <div class="preparation-content active" id="tab-6e">
+      <div class="prep-grid">
+        <div class="prep-card">
+          <div class="prep-icon"><i class="fa-solid fa-book-open"></i></div>
+          <h3>Manuels scolaires</h3>
+          <ul>
+            <li>Français 6e</li>
+            <li>English for Cameroon 6e</li>
+            <li>Mathématiques 6e</li>
+            <li>SVT 6e</li>
+            <li>Histoire-Géographie 6e</li>
+            <li>Informatique 6e</li>
+          </ul>
+        </div>
+        <div class="prep-card">
+          <div class="prep-icon"><i class="fa-solid fa-bus"></i></div>
+          <h3>Transport</h3>
+          <p class="price-tag">15 000 FCFA / mois</p>
+          <ul>
+            <li>Bus scolaire disponible</li>
+            <li>Itinéraires : Foumban centre & environs</li>
+            <li>Inscription au bus obligatoire</li>
+          </ul>
+        </div>
+        <div class="prep-card">
+          <div class="prep-icon"><i class="fa-solid fa-school"></i></div>
+          <h3>Cadre de l'année</h3>
+          <ul>
+            <li>Salles spacieuses et ventilées</li>
+            <li>Encadrement par un titulaire</li>
+            <li>Cantine scolaire disponible</li>
+            <li>Activités sportives & culturelles</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5e -->
+    <div class="preparation-content" id="tab-5e">
+      <div class="prep-grid">
+        <div class="prep-card">
+          <div class="prep-icon"><i class="fa-solid fa-book-open"></i></div>
+          <h3>Manuels scolaires</h3>
+          <ul>
+            <li>Français 5e</li>
+            <li>English for Cameroon 5e</li>
+            <li>Mathématiques 5e</li>
+            <li>SVT 5e</li>
+            <li>Histoire-Géographie 5e</li>
+            <li>Physique-Chimie 5e</li>
+          </ul>
+        </div>
+        <div class="prep-card">
+          <div class="prep-icon"><i class="fa-solid fa-bus"></i></div>
+          <h3>Transport</h3>
+          <p class="price-tag">15 000 FCFA / mois</p>
+          <ul>
+            <li>Bus scolaire disponible</li>
+            <li>Itinéraires : Foumban centre & environs</li>
+            <li>Inscription au bus obligatoire</li>
+          </ul>
+        </div>
+        <div class="prep-card">
+          <div class="prep-icon"><i class="fa-solid fa-school"></i></div>
+          <h3>Cadre de l'année</h3>
+          <ul>
+            <li>Salles spacieuses et ventilées</li>
+            <li>Introduction au laboratoire</li>
+            <li>Cantine scolaire disponible</li>
+            <li>Clubs (lecture, sport, débat)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4e -->
+    <div class="preparation-content" id="tab-4e">
+      <div class="prep-grid">
+        <div class="prep-card">
+          <div class="prep-icon"><i class="fa-solid fa-book-open"></i></div>
+          <h3>Manuels scolaires</h3>
+          <ul>
+            <li>Français 4e</li>
+            <li>English for Cameroon 4e</li>
+            <li>Mathématiques 4e</li>
+            <li>SVT 4e</li>
+            <li>Physique-Chimie 4e</li>
+            <li>Histoire-Géographie 4e</li>
+          </ul>
+        </div>
+        <div class="prep-card">
+          <div class="prep-icon"><i class="fa-solid fa-bus"></i></div>
+          <h3>Transport</h3>
+          <p class="price-tag">18 000 FCFA / mois</p>
+          <ul>
+            <li>Bus scolaire disponible</li>
+            <li>Itinéraires étendus</li>
+            <li>Inscription au bus obligatoire</li>
+          </ul>
+        </div>
+        <div class="prep-card">
+          <div class="prep-icon"><i class="fa-solid fa-school"></i></div>
+          <h3>Cadre de l'année</h3>
+          <ul>
+            <li>Travaux pratiques en laboratoire</li>
+            <li>Sorties pédagogiques</li>
+            <li>Préparation aux examens blancs</li>
+            <li>Encadrement renforcé</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3e -->
+    <div class="preparation-content" id="tab-3e">
+      <div class="prep-grid">
+        <div class="prep-card">
+          <div class="prep-icon"><i class="fa-solid fa-book-open"></i></div>
+          <h3>Manuels scolaires</h3>
+          <ul>
+            <li>Français 3e</li>
+            <li>English for Cameroon 3e</li>
+            <li>Mathématiques 3e</li>
+            <li>SVT 3e</li>
+            <li>Physique-Chimie 3e</li>
+            <li>Annales BEPC</li>
+          </ul>
+        </div>
+        <div class="prep-card">
+          <div class="prep-icon"><i class="fa-solid fa-bus"></i></div>
+          <h3>Transport</h3>
+          <p class="price-tag">18 000 FCFA / mois</p>
+          <ul>
+            <li>Bus scolaire disponible</li>
+            <li>Horaires adaptés BEPC</li>
+            <li>Inscription au bus obligatoire</li>
+          </ul>
+        </div>
+        <div class="prep-card">
+          <div class="prep-icon"><i class="fa-solid fa-school"></i></div>
+          <h3>Cadre de l'année</h3>
+          <ul>
+            <li>Préparation intensive au BEPC</li>
+            <li>Examens blancs mensuels</li>
+            <li>Séances de révisions encadrées</li>
+            <li>Soutien scolaire disponible</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2nde -->
+    <div class="preparation-content" id="tab-2nde">
+      <div class="prep-grid">
+        <div class="prep-card">
+          <div class="prep-icon"><i class="fa-solid fa-book-open"></i></div>
+          <h3>Manuels scolaires</h3>
+          <ul>
+            <li>Manuels de la série choisie</li>
+            <li>Français / English 2nde</li>
+            <li>Mathématiques 2nde</li>
+            <li>Physique-Chimie / SVT</li>
+            <li>Histoire-Géographie</li>
+          </ul>
+        </div>
+        <div class="prep-card">
+          <div class="prep-icon"><i class="fa-solid fa-bus"></i></div>
+          <h3>Transport</h3>
+          <p class="price-tag">20 000 FCFA / mois</p>
+          <ul>
+            <li>Bus scolaire disponible</li>
+            <li>Trajets matin & soir</li>
+            <li>Inscription au bus obligatoire</li>
+          </ul>
+        </div>
+        <div class="prep-card">
+          <div class="prep-icon"><i class="fa-solid fa-school"></i></div>
+          <h3>Cadre de l'année</h3>
+          <ul>
+            <li>Orientation vers les séries</li>
+            <li>Laboratoires et salles spécialisées</li>
+            <li>Clubs scientifiques & littéraires</li>
+            <li>Préparation aux examens</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1ere -->
+    <div class="preparation-content" id="tab-1ere">
+      <div class="prep-grid">
+        <div class="prep-card">
+          <div class="prep-icon"><i class="fa-solid fa-book-open"></i></div>
+          <h3>Manuels scolaires</h3>
+          <ul>
+            <li>Manuels de la série</li>
+            <li>Annales du Baccalauréat</li>
+            <li>Ouvrages de méthodologie</li>
+            <li>Livres de lecture</li>
+          </ul>
+        </div>
+        <div class="prep-card">
+          <div class="prep-icon"><i class="fa-solid fa-bus"></i></div>
+          <h3>Transport</h3>
+          <p class="price-tag">20 000 FCFA / mois</p>
+          <ul>
+            <li>Bus scolaire disponible</li>
+            <li>Trajets matin & soir</li>
+            <li>Inscription au bus obligatoire</li>
+          </ul>
+        </div>
+        <div class="prep-card">
+          <div class="prep-icon"><i class="fa-solid fa-school"></i></div>
+          <h3>Cadre de l'année</h3>
+          <ul>
+            <li>Approfondissement disciplinaire</li>
+            <li>Travaux pratiques renforcés</li>
+            <li>Préparation BAC blanc</li>
+            <li>Orientation post-bac</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Terminale -->
+    <div class="preparation-content" id="tab-terminale">
+      <div class="prep-grid">
+        <div class="prep-card">
+          <div class="prep-icon"><i class="fa-solid fa-book-open"></i></div>
+          <h3>Manuels scolaires</h3>
+          <ul>
+            <li>Manuels de la série</li>
+            <li>Annales du Baccalauréat</li>
+            <li>Ouvrages de méthodologie</li>
+            <li>Livres de lecture</li>
+          </ul>
+        </div>
+        <div class="prep-card">
+          <div class="prep-icon"><i class="fa-solid fa-bus"></i></div>
+          <h3>Transport</h3>
+          <p class="price-tag">20 000 FCFA / mois</p>
+          <ul>
+            <li>Bus scolaire disponible</li>
+            <li>Horaires adaptés aux révisions</li>
+            <li>Inscription au bus obligatoire</li>
+          </ul>
+        </div>
+        <div class="prep-card">
+          <div class="prep-icon"><i class="fa-solid fa-school"></i></div>
+          <h3>Cadre de l'année</h3>
+          <ul>
+            <li>Préparation intensive au BAC</li>
+            <li>Bac blanc tous les mois</li>
+            <li>Séances de révisions encadrées</li>
+            <li>Accompagnement orientation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- MOMENTS AU CBP (SLIDER MOBILE & DESKTOP) -->
+  <section class="moments-section" id="galerie">
+    <div class="section-title-center">
+      <h2>— Moments au CBP —</h2>
+    </div>
+
+    <div class="carousel-wrapper">
+      <button class="nav-arrow prev-arrow" id="prevMoments" aria-label="Précédent">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <div class="moments-slider-container">
+        <div class="moments-grid" id="momentsGrid">
+          
+          <!-- Card 1 -->
+          <div class="moment-card">
+            <div class="card-image-box">
+              <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=400&auto=format&fit=crop" alt="Atelier de Chimie">
+            </div>
+            <div class="moment-content">
+              <h4>Atelier de Chimie Appliquée</h4>
+              <p>Les élèves de 4ème explorent la réaction d'oxydation en laboratoire. Une expérience concrète et passionnante.</p>
+              <a href="#" class="btn-card">Voir Plus <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="moment-card">
+            <div class="card-image-box">
+              <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?q=80&w=400&auto=format&fit=crop" alt="Match de L'Équipe">
+            </div>
+            <div class="moment-content">
+              <h4>Match de L'Équipe d'École</h4>
+              <p>Les élèves de 4ème explorent la réaction d'oxydation en laboratoire. Une expérience concrète et passionnante.</p>
+              <a href="#" class="btn-card">Voir Plus <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="moment-card">
+            <div class="card-image-box">
+              <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=400&auto=format&fit=crop" alt="Match de Bilingue">
+            </div>
+            <div class="moment-content">
+              <h4>Match de Bilingue Pékékudé</h4>
+              <p>Les élèves de 4ème explorent la réaction d'oxydation en laboratoire. Une expérience concrète et passionnante.</p>
+              <a href="#" class="btn-card">Voir Plus <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="moment-card">
+            <div class="card-image-box">
+              <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=400&auto=format&fit=crop" alt="Atelier de Nos-Termirate">
+            </div>
+            <div class="moment-content">
+              <h4>Atelier de Nos-Termirate</h4>
+              <p>Les élèves de 4ème explorent la réaction d'oxydation en laboratoire. Une expérience concrète et passionnante.</p>
+              <a href="#" class="btn-card">Voir Plus <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <button class="nav-arrow next-arrow" id="nextMoments" aria-label="Suivant">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <div class="dots-pagination" id="dotsContainer">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </section>
+
+  <!-- TÉMOIGNAGES -->
+  <section class="testimonials-section">
+    <h2 class="text-center">Témoignages</h2>
+
+    <div class="testimonial-container">
+      <button class="nav-arrow prev-arrow"><i class="fa-solid fa-chevron-left"></i></button>
+
+      <div class="testimonial-card">
+        <div class="testimonial-image">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop" alt="Mme Fetsco">
+        </div>
+        <div class="testimonial-text">
+          <div class="quote-mark">“</div>
+          <p class="quote-body">
+            Mon enfant a bien progressé depuis qu'il est au CBP. L'encadrement est excellent et l'environnement est vraiment propice à l'apprentissage.
+          </p>
+          <div class="author-info">
+            <strong>Mme Fetsco</strong>
+            <span>Parent d'élève</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="nav-arrow next-arrow"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+
+    <div class="dots-pagination">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-title-center">
+    <span class="section-badge">FAQ</span>
+    <h2>Questions fréquentes</h2>
+    <p class="section-subtitle">Toutes les réponses aux questions que les parents se posent.</p>
+  </div>
+
+  <div class="faq-container">
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Quels sont les documents nécessaires pour l'inscription ?</span>
+        <i class="fa-solid fa-chevron-down faq-icon"></i>
+      </button>
+      <div class="faq-answer">
+        <p>Vous aurez besoin de : extrait d'acte de naissance, bulletin de notes de l'année précédente, certificat de scolarité, 2 photos d'identité, et la fiche d'inscription remplie.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Le concours d'entrée est-il obligatoire pour toutes les classes ?</span>
+        <i class="fa-solid fa-chevron-down faq-icon"></i>
+      </button>
+      <div class="faq-answer">
+        <p>Le concours d'entrée est obligatoire pour les classes de 6e, 5e et 4e. Pour les autres classes, l'admission se fait sur étude de dossier.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Quels sont les frais de scolarité ?</span>
+        <i class="fa-solid fa-chevron-down faq-icon"></i>
+      </button>
+      <div class="faq-answer">
+        <p>Les frais varient selon la classe et la filière. Nous vous invitons à nous contacter directement pour recevoir la grille tarifaire complète de l'année en cours.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Un bus scolaire est-il disponible ?</span>
+        <i class="fa-solid fa-chevron-down faq-icon"></i>
+      </button>
+      <div class="faq-answer">
+        <p>Oui, un service de bus scolaire est disponible pour les élèves. Les tarifs varient entre 15 000 et 20 000 FCFA par mois selon la classe et l'itinéraire.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>L'établissement est-il bilingue ?</span>
+        <i class="fa-solid fa-chevron-down faq-icon"></i>
+      </button>
+      <div class="faq-answer">
+        <p>Oui, le Collège Bilingue Pékékudé propose un enseignement bilingue français-anglais, encadré par des enseignants qualifiés dans les deux langues.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Y a-t-il une cantine scolaire ?</span>
+        <i class="fa-solid fa-chevron-down faq-icon"></i>
+      </button>
+      <div class="faq-answer">
+        <p>Oui, une cantine scolaire est disponible sur le campus, proposant des repas équilibrés à prix abordable pour tous les élèves.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Quels sont les horaires de cours ?</span>
+        <i class="fa-solid fa-chevron-down faq-icon"></i>
+      </button>
+      <div class="faq-answer">
+        <p>Les cours se déroulent du lundi au vendredi, de 7h30 à 16h00. Des activités parascolaires sont proposées en fin de journée.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Comment se déroule la procédure d'inscription ?</span>
+        <i class="fa-solid fa-chevron-down faq-icon"></i>
+      </button>
+      <div class="faq-answer">
+        <p>La procédure se déroule en 3 étapes : (1) retrait et dépôt du dossier d'inscription, (2) passage du concours d'entrée (pour 6e, 5e, 4e), (3) confirmation de l'admission et règlement des frais.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- FOOTER AVEC VAGUE HAUTE -->
+    <footer class="footer">
+
+    <div class="footer-wave">
+        <svg viewBox="0 0 1440 160" preserveAspectRatio="none">
+        <path d="M0,64 C180,0 360,112 540,48 C720,-16 900,96 1080,32 C1260,-32 1380,64 1440,48 L1440,0 L0,0 Z" fill="#ffffff"></path>
+        </svg>
+    </div>
+
+    <div class="footer-container">
+        <div class="footer-col">
+            <div class="footer-logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>Collège Bilingue Pékékudé</span>
+            </div>
+            <p class="slogan">Former aujourd'hui les leaders de demain.</p>
+            <div class="contact-info">
+            <p><i class="fa-solid fa-phone"></i> +237 6 96 42 96 48</p>
+            <p><i class="fa-solid fa-phone"></i> +237 6 99 12 36 55</p>
+            <p><i class="fa-solid fa-clock"></i> Lun - Ven : 7h30 - 16h00</p>
+            <p><i class="fa-solid fa-envelope"></i> contact@cbp-cm.com</p>
+            </div>
+        </div>
+
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+            <li><a href="#accueil"><i class="fa-solid fa-chevron-right"></i> Accueil</a></li>
+            <li><a href="#about"><i class="fa-solid fa-chevron-right"></i> À propos</a></li>
+            <li><a href="#programmes"><i class="fa-solid fa-chevron-right"></i> Nos programmes</a></li>
+            <li><a href="#galerie"><i class="fa-solid fa-chevron-right"></i> Galerie</a></li>
+            <li><a href="#faq"><i class="fa-solid fa-chevron-right"></i> FAQ</a></li>
+            <li><a href="#contact"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h3>Notre Valeur</h3>
+            <ul class="footer-values">
+            <li><i class="fa-solid fa-circle-check"></i> Excellence</li>
+            <li><i class="fa-solid fa-circle-check"></i> Discipline</li>
+            <li><i class="fa-solid fa-circle-check"></i> Respect</li>
+            <li><i class="fa-solid fa-circle-check"></i> Responsabilité</li>
+            <li><i class="fa-solid fa-circle-check"></i> Solidarité</li>
+            </ul>
+        </div>
+        </div>
+
+        <div class="footer-bottom">
+        <div class="footer-bottom-container">
+            <p>© 2025 Collège Bilingue Pékékudé. Tous droits réservés.</p>
+            <div class="social-links">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            <div class="location-footer">
+            <i class="fa-solid fa-location-dot"></i> Foumban, Cameroun
+            </div>
+        </div>
+        </div>
+    </footer>
+
+  <script src="../js/collège.js"></script>
+
+  <!-- BOUTON RETOUR EN HAUT -->
+ <button id="backToTop" class="back-to-top" aria-label="Retour en haut">
+    <i class="fa-solid fa-arrow-up"></i>
+ </button>
+
+</body>
+</html>
