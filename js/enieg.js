@@ -368,3 +368,31 @@ document.querySelectorAll(
     updateSlider();
     startAutoplay();
 })();
+
+// ===== FAQ ACCORDÉON =====
+(function initFaq() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    if (faqItems.length === 0) return;
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        if (!question) return;
+
+        question.addEventListener('click', () => {
+            const isOpen = item.classList.contains('open');
+
+            // Ferme tous les autres items (comportement accordéon strict)
+            faqItems.forEach(other => {
+                other.classList.remove('open');
+                const btn = other.querySelector('.faq-question');
+                if (btn) btn.setAttribute('aria-expanded', 'false');
+            });
+
+            // Ouvre l'item cliqué s'il était fermé
+            if (!isOpen) {
+                item.classList.add('open');
+                question.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+})();
