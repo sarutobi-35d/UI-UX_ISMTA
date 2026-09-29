@@ -14,6 +14,21 @@
 </head>
 <body>
 
+  <!-- BANDEAU D'ANNONCE -->
+  <div class="announcement-bar" id="announcementBar">
+    <div class="announcement-content">
+      <span class="announcement-pulse"></span>
+      <p>
+        <strong>📢 Inscriptions 2025-2026 ouvertes</strong>
+        — Concours d'entrée bientôt — <em>Places limitées</em>
+        <a href="#contact" class="announcement-link">S'informer <i class="fa-solid fa-arrow-right"></i></a>
+      </p>
+    </div>
+    <button class="announcement-close" id="announcementClose" aria-label="Fermer le bandeau">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+
   <!-- HEADER / NAVBAR -->
   <header class="navbar-wrapper">
     <nav class="navbar">
@@ -38,16 +53,10 @@
           <button class="lang-btn" data-lang="en">EN</button>
         </div>
 
-        <!-- 🟢 NOUVEAU : Bouton Inscription dans la liste déroulante (Mobile uniquement) -->
         <a href="#inscription" class="btn-inscription btn-mobile-only" data-i18n="inscription">Inscription</a>
       </div>
 
       <div class="nav-right">
-
-        <div class="location-badge">
-          <i class="fa-solid fa-location-dot"></i> Foumban, Cameroun
-        </div>
-
         <!-- 🟢 SÉLECTEUR DE LANGUE FR / EN -->
         <div class="lang-switcher">
           <button class="lang-btn active" data-lang="fr">FR</button>
@@ -55,16 +64,12 @@
           <button class="lang-btn" data-lang="en">EN</button>
         </div>
 
-        <!-- 🟢 MODIFIÉ : Ajout de la classe "btn-desktop-only" pour le cacher sur mobile -->
         <a href="#inscription" class="btn-inscription btn-desktop-only">Inscription</a>
 
-        <!-- Bouton Menu Hamburger (Mobile) -->
         <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">
           <i class="fa-solid fa-bars"></i>
         </button>
-
       </div>
-
     </nav>
   </header>
 
@@ -73,27 +78,146 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <span class="hero-subtitle">Discipline • Excellence • Réussite</span>
-      <h1>Collège Bilingue<br>Pékékudé</h1>
-      <p class="hero-description">Une formation de qualité pour construire votre avenir.</p>
+      <h1>Votre enfant réussira<br>au Collège Bilingue Pékékudé</h1>
+      <p class="hero-description">
+        Bilingue • Encadré • Sécurisé. Offrez à votre enfant un cadre d'excellence pour construire son avenir.
+      </p>
 
       <div class="hero-info-pills">
-        <span class="pill"><i class="fa-solid fa-location-dot"></i> Foumban, Cameroun</span>
-        <span class="pill"><i class="fa-solid fa-graduation-cap"></i> De la 6e à la Terminale</span>
+        <span class="pill"><i class="fa-solid fa-trophy"></i> 92% de réussite</span>
+        <span class="pill"><i class="fa-solid fa-user-graduate"></i> 30 enseignants diplômés</span>
+        <span class="pill"><i class="fa-solid fa-bus"></i> Transport scolaire</span>
       </div>
 
       <div class="hero-buttons">
-        <a href="#about" class="btn-primary">Découvrir notre établissement <i class="fa-solid fa-arrow-right"></i></a>
-        <a href="#contact" class="btn-outline">Nous contacter <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#contact" class="btn-primary">
+          <i class="fa-solid fa-file-pen"></i> Inscrire mon enfant
+        </a>
+        <a href="https://wa.me/237699123655" target="_blank" rel="noopener" class="btn-outline btn-whatsapp-hero">
+          <i class="fa-brands fa-whatsapp"></i> Poser une question
+        </a>
       </div>
     </div>
 
-   <!-- SÉPARATEUR EN VAGUE ACCENTUÉE (HERO) -->
     <div class="hero-wave">
-        <svg viewBox="0 0 1440 160" preserveAspectRatio="none">
+      <svg viewBox="0 0 1440 160" preserveAspectRatio="none">
         <path d="M0,32 C180,120 360,0 540,64 C720,128 900,16 1080,80 C1260,144 1380,48 1440,32 L1440,161 L0,161 Z" fill="#eaf4ed"></path>
-        </svg>
+      </svg>
+    </div>
+  </section>
+
+  <!-- POURQUOI NOUS CHOISIR -->
+  <section class="why-us-section" id="pourquoi">
+    <div class="section-title-center">
+      <span class="section-badge">POURQUOI NOUS CHOISIR</span>
+      <h2>6 raisons de confier votre enfant au CBP</h2>
+      <p class="section-subtitle">Des arguments concrets pour une scolarité réussie et sereine.</p>
     </div>
 
+    <div class="why-us-grid">
+
+      <div class="why-card">
+        <div class="why-icon"><i class="fa-solid fa-trophy"></i></div>
+        <h3>Excellence académique</h3>
+        <p>Taux de réussite de <strong>92% au BEPC</strong> et <strong>88% au BAC</strong>. Nos élèves sont préparés sérieusement aux examens officiels.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+        <h3>Enseignants qualifiés</h3>
+        <p><strong>30 enseignants diplômés</strong> et passionnés, dont 12 titulaires de Master. Un encadrement de qualité à chaque niveau.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon"><i class="fa-solid fa-language"></i></div>
+        <h3>Bilingue français-anglais</h3>
+        <p>Un enseignement <strong>100% bilingue</strong> qui ouvre à votre enfant les portes du Cameroun et du monde entier.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3>Cadre sécurisé</h3>
+        <p>Établissement <strong>clôturé, gardienné 24h/24</strong>, avec un protocole strict de sortie des élèves. Votre enfant est en sécurité.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon"><i class="fa-solid fa-bus"></i></div>
+        <h3>Transport scolaire</h3>
+        <p>Service de <strong>bus scolaire</strong> desservant Foumban centre et ses environs. Un souci en moins pour les parents.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-icon"><i class="fa-solid fa-utensils"></i></div>
+        <h3>Cantine équilibrée</h3>
+        <p><strong>Repas chauds et équilibrés</strong> préparés chaque jour sur place. Vos enfants mangent sainement et à l'heure.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CHIFFRES CLÉS -->
+  <section class="stats-section" id="chiffres">
+    <div class="stats-container">
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+        <div class="stat-number" data-target="500">0</div>
+        <div class="stat-plus">+</div>
+        <p class="stat-label">Élèves formés</p>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid fa-user-tie"></i></div>
+        <div class="stat-number" data-target="30">0</div>
+        <div class="stat-plus">+</div>
+        <p class="stat-label">Enseignants diplômés</p>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid fa-award"></i></div>
+        <div class="stat-number" data-target="92">0</div>
+        <div class="stat-plus">%</div>
+        <p class="stat-label">Réussite BEPC</p>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+        <div class="stat-number" data-target="15">0</div>
+        <div class="stat-plus">+</div>
+        <p class="stat-label">Années d'expérience</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOS GARANTIES AUX PARENTS -->
+  <section class="guarantees-section" id="garanties">
+    <div class="section-title-center">
+      <span class="section-badge">NOS GARANTIES</span>
+      <h2>Trois promesses que nous tenons à chaque parent</h2>
+      <p class="section-subtitle">Parce que votre confiance se mérite.</p>
+    </div>
+
+    <div class="guarantees-grid">
+      <div class="guarantee-card">
+        <div class="guarantee-number">01</div>
+        <div class="guarantee-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3>Sécurité garantie</h3>
+        <p>Votre enfant est sous surveillance constante, du matin à la sortie. Aucun élève ne quitte l'établissement sans autorisation parentale.</p>
+      </div>
+
+      <div class="guarantee-card">
+        <div class="guarantee-number">02</div>
+        <div class="guarantee-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+        <h3>Suivi personnalisé</h3>
+        <p>Bulletins trimestriels, rendez-vous parents-professeurs, et un encadrement rapproché pour chaque élève en difficulté.</p>
+      </div>
+
+      <div class="guarantee-card">
+        <div class="guarantee-number">03</div>
+        <div class="guarantee-icon"><i class="fa-solid fa-bullseye"></i></div>
+        <h3>Objectif réussite</h3>
+        <p>Examens blancs réguliers, soutien scolaire gratuit, et préparation intensive aux examens officiels (BEPC, Probatoire, BAC).</p>
+      </div>
+    </div>
   </section>
 
   <!-- CONCOURS D'ENTREE -->
@@ -144,60 +268,55 @@
     </div>
   </section>
 
-  <!-- NOS PROGRAMMES -->
-    <section class="programmes-section" id="programmes">
+  <!-- COMMENT INSCRIRE EN 3 ÉTAPES -->
+  <section class="steps-section" id="etapes">
     <div class="section-title-center">
-        <span class="section-badge">NOS PROGRAMMES</span>
-        <h2>Des filières adaptées à chaque ambition</h2>
-        <p class="section-subtitle">Un enseignement bilingue (français / anglais) conforme au programme officiel du MINESEC.</p>
+      <span class="section-badge">INSCRIPTION SIMPLE</span>
+      <h2>Inscrire votre enfant en 3 étapes</h2>
+      <p class="section-subtitle">Une procédure claire et rapide, sans stress.</p>
     </div>
 
-    <div class="programmes-grid">
-        <div class="programme-card">
-        <div class="programme-icon"><i class="fa-solid fa-flask"></i></div>
-        <h3>Série Scientifique</h3>
-        <p>Mathématiques, Physique-Chimie, Sciences de la Vie et de la Terre, Informatique.</p>
-        <ul class="programme-list">
-            <li><i class="fa-solid fa-check"></i> Laboratoires équipés</li>
-            <li><i class="fa-solid fa-check"></i> Préparation BAC C & D</li>
-            <li><i class="fa-solid fa-check"></i> Concours d'entrée aux grandes écoles</li>
-        </ul>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-badge">Étape 1</div>
+        <div class="step-icon"><i class="fa-solid fa-folder-open"></i></div>
+        <h3>Retirer le dossier</h3>
+        <p>Passez au secrétariat de l'établissement du lundi au vendredi (7h30 - 16h00) pour retirer le dossier d'inscription.</p>
+        <div class="step-detail">
+          <i class="fa-solid fa-check"></i> Dossier gratuit
         </div>
+      </div>
 
-        <div class="programme-card">
-        <div class="programme-icon"><i class="fa-solid fa-book"></i></div>
-        <h3>Série Littéraire</h3>
-        <p>Français, Anglais, Philosophie, Histoire-Géographie, Littérature.</p>
-        <ul class="programme-list">
-            <li><i class="fa-solid fa-check"></i> Expression écrite & orale renforcée</li>
-            <li><i class="fa-solid fa-check"></i> Préparation BAC A</li>
-            <li><i class="fa-solid fa-check"></i> Club débat & journalisme</li>
-        </ul>
+      <div class="step-card">
+        <div class="step-badge">Étape 2</div>
+        <div class="step-icon"><i class="fa-solid fa-file-pen"></i></div>
+        <h3>Passer le concours</h3>
+        <p>Pour les classes de <strong>6e, 5e et 4e</strong>, votre enfant passe un concours d'entrée organisé par l'école.</p>
+        <div class="step-detail">
+          <i class="fa-solid fa-check"></i> Résultats sous 72h
         </div>
+      </div>
 
-        <div class="programme-card">
-        <div class="programme-icon"><i class="fa-solid fa-language"></i></div>
-        <h3>Filière Bilingue</h3>
-        <p>Cursus francophone et anglophone avec un tronc commun renforcé.</p>
-        <ul class="programme-list">
-            <li><i class="fa-solid fa-check"></i> Immersion en anglais</li>
-            <li><i class="fa-solid fa-check"></i> Certifications internationales</li>
-            <li><i class="fa-solid fa-check"></i> Échanges interculturels</li>
-        </ul>
+      <div class="step-card">
+        <div class="step-badge">Étape 3</div>
+        <div class="step-icon"><i class="fa-solid fa-circle-check"></i></div>
+        <h3>Confirmer l'admission</h3>
+        <p>Après admission, il ne reste plus qu'à régler les frais de scolarité et fournir les documents demandés.</p>
+        <div class="step-detail">
+          <i class="fa-solid fa-check"></i> Rentrée assurée
         </div>
-
-        <div class="programme-card">
-        <div class="programme-icon"><i class="fa-solid fa-briefcase"></i></div>
-        <h3>Série Gestion / Commerciale</h3>
-        <p>Économie, Comptabilité, Droit, Gestion des entreprises.</p>
-        <ul class="programme-list">
-            <li><i class="fa-solid fa-check"></i> Préparation BAC G</li>
-            <li><i class="fa-solid fa-check"></i> Stages en entreprise</li>
-            <li><i class="fa-solid fa-check"></i> Initiation à l'entrepreneuriat</li>
-        </ul>
-        </div>
+      </div>
     </div>
-    </section>
+
+    <div class="steps-cta">
+      <a href="#contact" class="btn-primary btn-steps">
+        <i class="fa-solid fa-file-pen"></i> Commencer mon inscription
+      </a>
+      <a href="https://wa.me/237699123655" target="_blank" rel="noopener" class="btn-steps-outline">
+        <i class="fa-brands fa-whatsapp"></i> Poser une question
+      </a>
+    </div>
+  </section>
 
   <!-- A PROPOS & ATOUTS -->
   <section class="about-section" id="about">
@@ -259,289 +378,342 @@
     </div>
   </section>
 
+  <!-- NOS PROGRAMMES -->
+  <section class="programmes-section" id="programmes">
+    <div class="section-title-center">
+      <span class="section-badge">NOS PROGRAMMES</span>
+      <h2>Des filières adaptées à chaque ambition</h2>
+      <p class="section-subtitle">Un enseignement bilingue (français / anglais) conforme au programme officiel du MINESEC.</p>
+    </div>
+
+    <div class="programmes-grid">
+      <div class="programme-card">
+        <div class="programme-icon"><i class="fa-solid fa-flask"></i></div>
+        <h3>Série Scientifique</h3>
+        <p>Mathématiques, Physique-Chimie, Sciences de la Vie et de la Terre, Informatique.</p>
+        <ul class="programme-list">
+          <li><i class="fa-solid fa-check"></i> Laboratoires équipés</li>
+          <li><i class="fa-solid fa-check"></i> Préparation BAC C & D</li>
+          <li><i class="fa-solid fa-check"></i> Concours d'entrée aux grandes écoles</li>
+        </ul>
+      </div>
+
+      <div class="programme-card">
+        <div class="programme-icon"><i class="fa-solid fa-book"></i></div>
+        <h3>Série Littéraire</h3>
+        <p>Français, Anglais, Philosophie, Histoire-Géographie, Littérature.</p>
+        <ul class="programme-list">
+          <li><i class="fa-solid fa-check"></i> Expression écrite & orale renforcée</li>
+          <li><i class="fa-solid fa-check"></i> Préparation BAC A</li>
+          <li><i class="fa-solid fa-check"></i> Club débat & journalisme</li>
+        </ul>
+      </div>
+
+      <div class="programme-card">
+        <div class="programme-icon"><i class="fa-solid fa-language"></i></div>
+        <h3>Filière Bilingue</h3>
+        <p>Cursus francophone et anglophone avec un tronc commun renforcé.</p>
+        <ul class="programme-list">
+          <li><i class="fa-solid fa-check"></i> Immersion en anglais</li>
+          <li><i class="fa-solid fa-check"></i> Certifications internationales</li>
+          <li><i class="fa-solid fa-check"></i> Échanges interculturels</li>
+        </ul>
+      </div>
+
+      <div class="programme-card">
+        <div class="programme-icon"><i class="fa-solid fa-briefcase"></i></div>
+        <h3>Série Gestion / Commerciale</h3>
+        <p>Économie, Comptabilité, Droit, Gestion des entreprises.</p>
+        <ul class="programme-list">
+          <li><i class="fa-solid fa-check"></i> Préparation BAC G</li>
+          <li><i class="fa-solid fa-check"></i> Stages en entreprise</li>
+          <li><i class="fa-solid fa-check"></i> Initiation à l'entrepreneuriat</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
   <!-- PREPARER SON INSCRIPTION -->
-<section class="preparation-section" id="preparation">
-  <div class="section-title-center">
-    <span class="section-badge">PRÉPARER SON INSCRIPTION</span>
-    <h2>Ce dont vous aurez besoin pour chaque classe</h2>
-    <p class="section-subtitle">Une check-list complète pour préparer la rentrée de votre enfant en toute sérénité.</p>
-  </div>
+  <section class="preparation-section" id="preparation">
+    <div class="section-title-center">
+      <span class="section-badge">PRÉPARER SON INSCRIPTION</span>
+      <h2>Ce dont vous aurez besoin pour chaque classe</h2>
+      <p class="section-subtitle">Une check-list complète pour préparer la rentrée de votre enfant en toute sérénité.</p>
+    </div>
 
-  <!-- ONGLETS PAR CLASSE -->
-  <div class="preparation-tabs">
-    <button class="tab-btn active" data-tab="6e">6e</button>
-    <button class="tab-btn" data-tab="5e">5e</button>
-    <button class="tab-btn" data-tab="4e">4e</button>
-    <button class="tab-btn" data-tab="3e">3e</button>
-    <button class="tab-btn" data-tab="2nde">2nde</button>
-    <button class="tab-btn" data-tab="1ere">1ère</button>
-    <button class="tab-btn" data-tab="terminale">Terminale</button>
-  </div>
+    <div class="preparation-tabs">
+      <button class="tab-btn active" data-tab="6e">6e</button>
+      <button class="tab-btn" data-tab="5e">5e</button>
+      <button class="tab-btn" data-tab="4e">4e</button>
+      <button class="tab-btn" data-tab="3e">3e</button>
+      <button class="tab-btn" data-tab="2nde">2nde</button>
+      <button class="tab-btn" data-tab="1ere">1ère</button>
+      <button class="tab-btn" data-tab="terminale">Terminale</button>
+    </div>
 
-  <div class="preparation-content-wrapper">
-    <!-- 6e -->
-    <div class="preparation-content active" id="tab-6e">
-      <div class="prep-grid">
-        <div class="prep-card">
-          <div class="prep-icon"><i class="fa-solid fa-book-open"></i></div>
-          <h3>Manuels scolaires</h3>
-          <ul>
-            <li>Français 6e</li>
-            <li>English for Cameroon 6e</li>
-            <li>Mathématiques 6e</li>
-            <li>SVT 6e</li>
-            <li>Histoire-Géographie 6e</li>
-            <li>Informatique 6e</li>
-          </ul>
+    <div class="preparation-content-wrapper">
+      <!-- 6e -->
+      <div class="preparation-content active" id="tab-6e">
+        <div class="prep-grid">
+          <div class="prep-card">
+            <div class="prep-icon"><i class="fa-solid fa-book-open"></i></div>
+            <h3>Manuels scolaires</h3>
+            <ul>
+              <li>Français 6e</li>
+              <li>English for Cameroon 6e</li>
+              <li>Mathématiques 6e</li>
+              <li>SVT 6e</li>
+              <li>Histoire-Géographie 6e</li>
+              <li>Informatique 6e</li>
+            </ul>
+          </div>
+          <div class="prep-card">
+            <div class="prep-icon"><i class="fa-solid fa-bus"></i></div>
+            <h3>Transport</h3>
+            <p class="price-tag">15 000 FCFA / mois</p>
+            <ul>
+              <li>Bus scolaire disponible</li>
+              <li>Itinéraires : Foumban centre & environs</li>
+              <li>Inscription au bus obligatoire</li>
+            </ul>
+          </div>
+          <div class="prep-card">
+            <div class="prep-icon"><i class="fa-solid fa-school"></i></div>
+            <h3>Cadre de l'année</h3>
+            <ul>
+              <li>Salles spacieuses et ventilées</li>
+              <li>Encadrement par un titulaire</li>
+              <li>Cantine scolaire disponible</li>
+              <li>Activités sportives & culturelles</li>
+            </ul>
+          </div>
         </div>
-        <div class="prep-card">
-          <div class="prep-icon"><i class="fa-solid fa-bus"></i></div>
-          <h3>Transport</h3>
-          <p class="price-tag">15 000 FCFA / mois</p>
-          <ul>
-            <li>Bus scolaire disponible</li>
-            <li>Itinéraires : Foumban centre & environs</li>
-            <li>Inscription au bus obligatoire</li>
-          </ul>
+      </div>
+
+      <!-- 5e -->
+      <div class="preparation-content" id="tab-5e">
+        <div class="prep-grid">
+          <div class="prep-card">
+            <div class="prep-icon"><i class="fa-solid fa-book-open"></i></div>
+            <h3>Manuels scolaires</h3>
+            <ul>
+              <li>Français 5e</li>
+              <li>English for Cameroon 5e</li>
+              <li>Mathématiques 5e</li>
+              <li>SVT 5e</li>
+              <li>Histoire-Géographie 5e</li>
+              <li>Physique-Chimie 5e</li>
+            </ul>
+          </div>
+          <div class="prep-card">
+            <div class="prep-icon"><i class="fa-solid fa-bus"></i></div>
+            <h3>Transport</h3>
+            <p class="price-tag">15 000 FCFA / mois</p>
+            <ul>
+              <li>Bus scolaire disponible</li>
+              <li>Itinéraires : Foumban centre & environs</li>
+              <li>Inscription au bus obligatoire</li>
+            </ul>
+          </div>
+          <div class="prep-card">
+            <div class="prep-icon"><i class="fa-solid fa-school"></i></div>
+            <h3>Cadre de l'année</h3>
+            <ul>
+              <li>Salles spacieuses et ventilées</li>
+              <li>Introduction au laboratoire</li>
+              <li>Cantine scolaire disponible</li>
+              <li>Clubs (lecture, sport, débat)</li>
+            </ul>
+          </div>
         </div>
-        <div class="prep-card">
-          <div class="prep-icon"><i class="fa-solid fa-school"></i></div>
-          <h3>Cadre de l'année</h3>
-          <ul>
-            <li>Salles spacieuses et ventilées</li>
-            <li>Encadrement par un titulaire</li>
-            <li>Cantine scolaire disponible</li>
-            <li>Activités sportives & culturelles</li>
-          </ul>
+      </div>
+
+      <!-- 4e -->
+      <div class="preparation-content" id="tab-4e">
+        <div class="prep-grid">
+          <div class="prep-card">
+            <div class="prep-icon"><i class="fa-solid fa-book-open"></i></div>
+            <h3>Manuels scolaires</h3>
+            <ul>
+              <li>Français 4e</li>
+              <li>English for Cameroon 4e</li>
+              <li>Mathématiques 4e</li>
+              <li>SVT 4e</li>
+              <li>Physique-Chimie 4e</li>
+              <li>Histoire-Géographie 4e</li>
+            </ul>
+          </div>
+          <div class="prep-card">
+            <div class="prep-icon"><i class="fa-solid fa-bus"></i></div>
+            <h3>Transport</h3>
+            <p class="price-tag">18 000 FCFA / mois</p>
+            <ul>
+              <li>Bus scolaire disponible</li>
+              <li>Itinéraires étendus</li>
+              <li>Inscription au bus obligatoire</li>
+            </ul>
+          </div>
+          <div class="prep-card">
+            <div class="prep-icon"><i class="fa-solid fa-school"></i></div>
+            <h3>Cadre de l'année</h3>
+            <ul>
+              <li>Travaux pratiques en laboratoire</li>
+              <li>Sorties pédagogiques</li>
+              <li>Préparation aux examens blancs</li>
+              <li>Encadrement renforcé</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3e -->
+      <div class="preparation-content" id="tab-3e">
+        <div class="prep-grid">
+          <div class="prep-card">
+            <div class="prep-icon"><i class="fa-solid fa-book-open"></i></div>
+            <h3>Manuels scolaires</h3>
+            <ul>
+              <li>Français 3e</li>
+              <li>English for Cameroon 3e</li>
+              <li>Mathématiques 3e</li>
+              <li>SVT 3e</li>
+              <li>Physique-Chimie 3e</li>
+              <li>Annales BEPC</li>
+            </ul>
+          </div>
+          <div class="prep-card">
+            <div class="prep-icon"><i class="fa-solid fa-bus"></i></div>
+            <h3>Transport</h3>
+            <p class="price-tag">18 000 FCFA / mois</p>
+            <ul>
+              <li>Bus scolaire disponible</li>
+              <li>Horaires adaptés BEPC</li>
+              <li>Inscription au bus obligatoire</li>
+            </ul>
+          </div>
+          <div class="prep-card">
+            <div class="prep-icon"><i class="fa-solid fa-school"></i></div>
+            <h3>Cadre de l'année</h3>
+            <ul>
+              <li>Préparation intensive au BEPC</li>
+              <li>Examens blancs mensuels</li>
+              <li>Séances de révisions encadrées</li>
+              <li>Soutien scolaire disponible</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2nde -->
+      <div class="preparation-content" id="tab-2nde">
+        <div class="prep-grid">
+          <div class="prep-card">
+            <div class="prep-icon"><i class="fa-solid fa-book-open"></i></div>
+            <h3>Manuels scolaires</h3>
+            <ul>
+              <li>Manuels de la série choisie</li>
+              <li>Français / English 2nde</li>
+              <li>Mathématiques 2nde</li>
+              <li>Physique-Chimie / SVT</li>
+              <li>Histoire-Géographie</li>
+            </ul>
+          </div>
+          <div class="prep-card">
+            <div class="prep-icon"><i class="fa-solid fa-bus"></i></div>
+            <h3>Transport</h3>
+            <p class="price-tag">20 000 FCFA / mois</p>
+            <ul>
+              <li>Bus scolaire disponible</li>
+              <li>Trajets matin & soir</li>
+              <li>Inscription au bus obligatoire</li>
+            </ul>
+          </div>
+          <div class="prep-card">
+            <div class="prep-icon"><i class="fa-solid fa-school"></i></div>
+            <h3>Cadre de l'année</h3>
+            <ul>
+              <li>Orientation vers les séries</li>
+              <li>Laboratoires et salles spécialisées</li>
+              <li>Clubs scientifiques & littéraires</li>
+              <li>Préparation aux examens</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1ere -->
+      <div class="preparation-content" id="tab-1ere">
+        <div class="prep-grid">
+          <div class="prep-card">
+            <div class="prep-icon"><i class="fa-solid fa-book-open"></i></div>
+            <h3>Manuels scolaires</h3>
+            <ul>
+              <li>Manuels de la série</li>
+              <li>Annales du Baccalauréat</li>
+              <li>Ouvrages de méthodologie</li>
+              <li>Livres de lecture</li>
+            </ul>
+          </div>
+          <div class="prep-card">
+            <div class="prep-icon"><i class="fa-solid fa-bus"></i></div>
+            <h3>Transport</h3>
+            <p class="price-tag">20 000 FCFA / mois</p>
+            <ul>
+              <li>Bus scolaire disponible</li>
+              <li>Trajets matin & soir</li>
+              <li>Inscription au bus obligatoire</li>
+            </ul>
+          </div>
+          <div class="prep-card">
+            <div class="prep-icon"><i class="fa-solid fa-school"></i></div>
+            <h3>Cadre de l'année</h3>
+            <ul>
+              <li>Approfondissement disciplinaire</li>
+              <li>Travaux pratiques renforcés</li>
+              <li>Préparation BAC blanc</li>
+              <li>Orientation post-bac</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Terminale -->
+      <div class="preparation-content" id="tab-terminale">
+        <div class="prep-grid">
+          <div class="prep-card">
+            <div class="prep-icon"><i class="fa-solid fa-book-open"></i></div>
+            <h3>Manuels scolaires</h3>
+            <ul>
+              <li>Manuels de la série</li>
+              <li>Annales du Baccalauréat</li>
+              <li>Ouvrages de méthodologie</li>
+              <li>Livres de lecture</li>
+            </ul>
+          </div>
+          <div class="prep-card">
+            <div class="prep-icon"><i class="fa-solid fa-bus"></i></div>
+            <h3>Transport</h3>
+            <p class="price-tag">20 000 FCFA / mois</p>
+            <ul>
+              <li>Bus scolaire disponible</li>
+              <li>Horaires adaptés aux révisions</li>
+              <li>Inscription au bus obligatoire</li>
+            </ul>
+          </div>
+          <div class="prep-card">
+            <div class="prep-icon"><i class="fa-solid fa-school"></i></div>
+            <h3>Cadre de l'année</h3>
+            <ul>
+              <li>Préparation intensive au BAC</li>
+              <li>Bac blanc tous les mois</li>
+              <li>Séances de révisions encadrées</li>
+              <li>Accompagnement orientation</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-
-    <!-- 5e -->
-    <div class="preparation-content" id="tab-5e">
-      <div class="prep-grid">
-        <div class="prep-card">
-          <div class="prep-icon"><i class="fa-solid fa-book-open"></i></div>
-          <h3>Manuels scolaires</h3>
-          <ul>
-            <li>Français 5e</li>
-            <li>English for Cameroon 5e</li>
-            <li>Mathématiques 5e</li>
-            <li>SVT 5e</li>
-            <li>Histoire-Géographie 5e</li>
-            <li>Physique-Chimie 5e</li>
-          </ul>
-        </div>
-        <div class="prep-card">
-          <div class="prep-icon"><i class="fa-solid fa-bus"></i></div>
-          <h3>Transport</h3>
-          <p class="price-tag">15 000 FCFA / mois</p>
-          <ul>
-            <li>Bus scolaire disponible</li>
-            <li>Itinéraires : Foumban centre & environs</li>
-            <li>Inscription au bus obligatoire</li>
-          </ul>
-        </div>
-        <div class="prep-card">
-          <div class="prep-icon"><i class="fa-solid fa-school"></i></div>
-          <h3>Cadre de l'année</h3>
-          <ul>
-            <li>Salles spacieuses et ventilées</li>
-            <li>Introduction au laboratoire</li>
-            <li>Cantine scolaire disponible</li>
-            <li>Clubs (lecture, sport, débat)</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4e -->
-    <div class="preparation-content" id="tab-4e">
-      <div class="prep-grid">
-        <div class="prep-card">
-          <div class="prep-icon"><i class="fa-solid fa-book-open"></i></div>
-          <h3>Manuels scolaires</h3>
-          <ul>
-            <li>Français 4e</li>
-            <li>English for Cameroon 4e</li>
-            <li>Mathématiques 4e</li>
-            <li>SVT 4e</li>
-            <li>Physique-Chimie 4e</li>
-            <li>Histoire-Géographie 4e</li>
-          </ul>
-        </div>
-        <div class="prep-card">
-          <div class="prep-icon"><i class="fa-solid fa-bus"></i></div>
-          <h3>Transport</h3>
-          <p class="price-tag">18 000 FCFA / mois</p>
-          <ul>
-            <li>Bus scolaire disponible</li>
-            <li>Itinéraires étendus</li>
-            <li>Inscription au bus obligatoire</li>
-          </ul>
-        </div>
-        <div class="prep-card">
-          <div class="prep-icon"><i class="fa-solid fa-school"></i></div>
-          <h3>Cadre de l'année</h3>
-          <ul>
-            <li>Travaux pratiques en laboratoire</li>
-            <li>Sorties pédagogiques</li>
-            <li>Préparation aux examens blancs</li>
-            <li>Encadrement renforcé</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- 3e -->
-    <div class="preparation-content" id="tab-3e">
-      <div class="prep-grid">
-        <div class="prep-card">
-          <div class="prep-icon"><i class="fa-solid fa-book-open"></i></div>
-          <h3>Manuels scolaires</h3>
-          <ul>
-            <li>Français 3e</li>
-            <li>English for Cameroon 3e</li>
-            <li>Mathématiques 3e</li>
-            <li>SVT 3e</li>
-            <li>Physique-Chimie 3e</li>
-            <li>Annales BEPC</li>
-          </ul>
-        </div>
-        <div class="prep-card">
-          <div class="prep-icon"><i class="fa-solid fa-bus"></i></div>
-          <h3>Transport</h3>
-          <p class="price-tag">18 000 FCFA / mois</p>
-          <ul>
-            <li>Bus scolaire disponible</li>
-            <li>Horaires adaptés BEPC</li>
-            <li>Inscription au bus obligatoire</li>
-          </ul>
-        </div>
-        <div class="prep-card">
-          <div class="prep-icon"><i class="fa-solid fa-school"></i></div>
-          <h3>Cadre de l'année</h3>
-          <ul>
-            <li>Préparation intensive au BEPC</li>
-            <li>Examens blancs mensuels</li>
-            <li>Séances de révisions encadrées</li>
-            <li>Soutien scolaire disponible</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- 2nde -->
-    <div class="preparation-content" id="tab-2nde">
-      <div class="prep-grid">
-        <div class="prep-card">
-          <div class="prep-icon"><i class="fa-solid fa-book-open"></i></div>
-          <h3>Manuels scolaires</h3>
-          <ul>
-            <li>Manuels de la série choisie</li>
-            <li>Français / English 2nde</li>
-            <li>Mathématiques 2nde</li>
-            <li>Physique-Chimie / SVT</li>
-            <li>Histoire-Géographie</li>
-          </ul>
-        </div>
-        <div class="prep-card">
-          <div class="prep-icon"><i class="fa-solid fa-bus"></i></div>
-          <h3>Transport</h3>
-          <p class="price-tag">20 000 FCFA / mois</p>
-          <ul>
-            <li>Bus scolaire disponible</li>
-            <li>Trajets matin & soir</li>
-            <li>Inscription au bus obligatoire</li>
-          </ul>
-        </div>
-        <div class="prep-card">
-          <div class="prep-icon"><i class="fa-solid fa-school"></i></div>
-          <h3>Cadre de l'année</h3>
-          <ul>
-            <li>Orientation vers les séries</li>
-            <li>Laboratoires et salles spécialisées</li>
-            <li>Clubs scientifiques & littéraires</li>
-            <li>Préparation aux examens</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- 1ere -->
-    <div class="preparation-content" id="tab-1ere">
-      <div class="prep-grid">
-        <div class="prep-card">
-          <div class="prep-icon"><i class="fa-solid fa-book-open"></i></div>
-          <h3>Manuels scolaires</h3>
-          <ul>
-            <li>Manuels de la série</li>
-            <li>Annales du Baccalauréat</li>
-            <li>Ouvrages de méthodologie</li>
-            <li>Livres de lecture</li>
-          </ul>
-        </div>
-        <div class="prep-card">
-          <div class="prep-icon"><i class="fa-solid fa-bus"></i></div>
-          <h3>Transport</h3>
-          <p class="price-tag">20 000 FCFA / mois</p>
-          <ul>
-            <li>Bus scolaire disponible</li>
-            <li>Trajets matin & soir</li>
-            <li>Inscription au bus obligatoire</li>
-          </ul>
-        </div>
-        <div class="prep-card">
-          <div class="prep-icon"><i class="fa-solid fa-school"></i></div>
-          <h3>Cadre de l'année</h3>
-          <ul>
-            <li>Approfondissement disciplinaire</li>
-            <li>Travaux pratiques renforcés</li>
-            <li>Préparation BAC blanc</li>
-            <li>Orientation post-bac</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- Terminale -->
-    <div class="preparation-content" id="tab-terminale">
-      <div class="prep-grid">
-        <div class="prep-card">
-          <div class="prep-icon"><i class="fa-solid fa-book-open"></i></div>
-          <h3>Manuels scolaires</h3>
-          <ul>
-            <li>Manuels de la série</li>
-            <li>Annales du Baccalauréat</li>
-            <li>Ouvrages de méthodologie</li>
-            <li>Livres de lecture</li>
-          </ul>
-        </div>
-        <div class="prep-card">
-          <div class="prep-icon"><i class="fa-solid fa-bus"></i></div>
-          <h3>Transport</h3>
-          <p class="price-tag">20 000 FCFA / mois</p>
-          <ul>
-            <li>Bus scolaire disponible</li>
-            <li>Horaires adaptés aux révisions</li>
-            <li>Inscription au bus obligatoire</li>
-          </ul>
-        </div>
-        <div class="prep-card">
-          <div class="prep-icon"><i class="fa-solid fa-school"></i></div>
-          <h3>Cadre de l'année</h3>
-          <ul>
-            <li>Préparation intensive au BAC</li>
-            <li>Bac blanc tous les mois</li>
-            <li>Séances de révisions encadrées</li>
-            <li>Accompagnement orientation</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- MOMENTS AU CBP (SLIDER MOBILE & DESKTOP) -->
   <section class="moments-section" id="galerie">
@@ -556,8 +728,7 @@
 
       <div class="moments-slider-container">
         <div class="moments-grid" id="momentsGrid">
-          
-          <!-- Card 1 -->
+
           <div class="moment-card">
             <div class="card-image-box">
               <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=400&auto=format&fit=crop" alt="Atelier de Chimie">
@@ -569,7 +740,6 @@
             </div>
           </div>
 
-          <!-- Card 2 -->
           <div class="moment-card">
             <div class="card-image-box">
               <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?q=80&w=400&auto=format&fit=crop" alt="Match de L'Équipe">
@@ -581,7 +751,6 @@
             </div>
           </div>
 
-          <!-- Card 3 -->
           <div class="moment-card">
             <div class="card-image-box">
               <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=400&auto=format&fit=crop" alt="Match de Bilingue">
@@ -593,7 +762,6 @@
             </div>
           </div>
 
-          <!-- Card 4 -->
           <div class="moment-card">
             <div class="card-image-box">
               <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=400&auto=format&fit=crop" alt="Atelier de Nos-Termirate">
@@ -633,7 +801,7 @@
           <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop" alt="Mme Fetsco">
         </div>
         <div class="testimonial-text">
-          <div class="quote-mark">“</div>
+          <div class="quote-mark">"</div>
           <p class="quote-body">
             Mon enfant a bien progressé depuis qu'il est au CBP. L'encadrement est excellent et l'environnement est vraiment propice à l'apprentissage.
           </p>
@@ -708,7 +876,6 @@
       <!-- Liste des questions -->
       <div class="faq-container" id="faqContainer">
 
-        <!-- Q1 - Inscription -->
         <div class="faq-item" data-category="inscription" data-keywords="documents acte naissance bulletin inscription dossier">
           <button class="faq-question" aria-expanded="false">
             <span class="faq-question-text">
@@ -724,7 +891,6 @@
           </div>
         </div>
 
-        <!-- Q2 - Inscription -->
         <div class="faq-item" data-category="inscription" data-keywords="concours entrée obligatoire 6e 5e 4e admission">
           <button class="faq-question" aria-expanded="false">
             <span class="faq-question-text">
@@ -740,7 +906,6 @@
           </div>
         </div>
 
-        <!-- Q3 - Inscription -->
         <div class="faq-item" data-category="inscription" data-keywords="procédure inscription étapes dossier admission">
           <button class="faq-question" aria-expanded="false">
             <span class="faq-question-text">
@@ -756,7 +921,6 @@
           </div>
         </div>
 
-        <!-- Q4 - Scolarité -->
         <div class="faq-item" data-category="scolarite" data-keywords="frais scolarité tarifs prix paiement">
           <button class="faq-question" aria-expanded="false">
             <span class="faq-question-text">
@@ -772,7 +936,6 @@
           </div>
         </div>
 
-        <!-- Q5 - Scolarité -->
         <div class="faq-item" data-category="scolarite" data-keywords="cantine repas nourriture prix">
           <button class="faq-question" aria-expanded="false">
             <span class="faq-question-text">
@@ -788,7 +951,6 @@
           </div>
         </div>
 
-        <!-- Q6 - Vie scolaire -->
         <div class="faq-item" data-category="vie" data-keywords="bus transport scolaire itinéraire tarif">
           <button class="faq-question" aria-expanded="false">
             <span class="faq-question-text">
@@ -804,7 +966,6 @@
           </div>
         </div>
 
-        <!-- Q7 - Vie scolaire -->
         <div class="faq-item" data-category="vie" data-keywords="bilingue anglais français langue enseignement">
           <button class="faq-question" aria-expanded="false">
             <span class="faq-question-text">
@@ -820,7 +981,6 @@
           </div>
         </div>
 
-        <!-- Q8 - Examens -->
         <div class="faq-item" data-category="examens" data-keywords="horaires cours heures emploi du temps">
           <button class="faq-question" aria-expanded="false">
             <span class="faq-question-text">
@@ -863,250 +1023,248 @@
   </section>
 
   <!-- CONTACT / INSCRIPTION VIA WHATSAPP -->
-<section class="contact-section" id="contact">
-  <div class="contact-header">
-    <span class="section-badge">CONTACT</span>
-    <h2>Écrivez-nous sur WhatsApp</h2>
-    <p class="section-subtitle">Remplissez le formulaire ci-dessous, votre message sera envoyé directement via WhatsApp à notre secrétariat.</p>
-  </div>
-
-  <div class="contact-wrapper">
-
-    <!-- Colonne gauche : infos pratiques -->
-    <div class="contact-info-col">
-      <div class="contact-info-card">
-        <div class="contact-info-icon">
-          <i class="fa-solid fa-headset"></i>
-        </div>
-        <h3>Nos coordonnées</h3>
-        <p class="contact-info-desc">Notre équipe est à votre écoute du lundi au vendredi.</p>
-
-        <ul class="contact-info-list">
-          <li>
-            <div class="contact-info-list-icon"><i class="fa-solid fa-phone"></i></div>
-            <div>
-              <strong>Téléphone</strong>
-              <span>+237 6 96 42 96 48</span>
-            </div>
-          </li>
-          <li>
-            <div class="contact-info-list-icon"><i class="fa-brands fa-whatsapp"></i></div>
-            <div>
-              <strong>WhatsApp</strong>
-              <span>+237 6 99 12 36 55</span>
-            </div>
-          </li>
-          <li>
-            <div class="contact-info-list-icon"><i class="fa-solid fa-envelope"></i></div>
-            <div>
-              <strong>Email</strong>
-              <span>contact@cbp-cm.com</span>
-            </div>
-          </li>
-          <li>
-            <div class="contact-info-list-icon"><i class="fa-solid fa-clock"></i></div>
-            <div>
-              <strong>Horaires</strong>
-              <span>Lun - Ven : 7h30 - 16h00</span>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <div class="contact-quote-card">
-        <i class="fa-solid fa-quote-left contact-quote-icon"></i>
-        <p>Nous répondons généralement en moins de 2 heures pendant les heures d'ouverture.</p>
-      </div>
+  <section class="contact-section" id="contact">
+    <div class="contact-header">
+      <span class="section-badge">CONTACT</span>
+      <h2>Écrivez-nous sur WhatsApp</h2>
+      <p class="section-subtitle">Remplissez le formulaire ci-dessous, votre message sera envoyé directement via WhatsApp à notre secrétariat.</p>
     </div>
 
-    <!-- Colonne droite : formulaire -->
-    <form class="contact-form" id="whatsappForm" novalidate>
+    <div class="contact-wrapper">
 
-      <div class="form-row">
-        <div class="form-group">
-          <label for="cf-name">
-            <i class="fa-solid fa-user"></i> Nom complet <span class="required">*</span>
-          </label>
-          <input
-            type="text"
-            id="cf-name"
-            name="name"
-            placeholder="Ex : Marie Nkomo"
-            required
-            autocomplete="name"
-          >
-          <span class="form-error" data-error-for="cf-name"></span>
+      <!-- Colonne gauche : infos pratiques -->
+      <div class="contact-info-col">
+        <div class="contact-info-card">
+          <div class="contact-info-icon">
+            <i class="fa-solid fa-headset"></i>
+          </div>
+          <h3>Nos coordonnées</h3>
+          <p class="contact-info-desc">Notre équipe est à votre écoute du lundi au vendredi.</p>
+
+          <ul class="contact-info-list">
+            <li>
+              <div class="contact-info-list-icon"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <strong>Téléphone</strong>
+                <span>+237 6 96 42 96 48</span>
+              </div>
+            </li>
+            <li>
+              <div class="contact-info-list-icon"><i class="fa-brands fa-whatsapp"></i></div>
+              <div>
+                <strong>WhatsApp</strong>
+                <span>+237 6 99 12 36 55</span>
+              </div>
+            </li>
+            <li>
+              <div class="contact-info-list-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <strong>Email</strong>
+                <span>contact@cbp-cm.com</span>
+              </div>
+            </li>
+            <li>
+              <div class="contact-info-list-icon"><i class="fa-solid fa-clock"></i></div>
+              <div>
+                <strong>Horaires</strong>
+                <span>Lun - Ven : 7h30 - 16h00</span>
+              </div>
+            </li>
+          </ul>
         </div>
 
-        <div class="form-group">
-          <label for="cf-phone">
-            <i class="fa-solid fa-phone"></i> Téléphone <span class="required">*</span>
-          </label>
-          <input
-            type="tel"
-            id="cf-phone"
-            name="phone"
-            placeholder="Ex : +237 6 XX XX XX XX"
-            required
-            autocomplete="tel"
-          >
-          <span class="form-error" data-error-for="cf-phone"></span>
+        <div class="contact-quote-card">
+          <i class="fa-solid fa-quote-left contact-quote-icon"></i>
+          <p>Nous répondons généralement en moins de 2 heures pendant les heures d'ouverture.</p>
         </div>
       </div>
 
-      <div class="form-row">
+      <!-- Colonne droite : formulaire -->
+      <form class="contact-form" id="whatsappForm" novalidate>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-name">
+              <i class="fa-solid fa-user"></i> Nom complet <span class="required">*</span>
+            </label>
+            <input
+              type="text"
+              id="cf-name"
+              name="name"
+              placeholder="Ex : Marie Nkomo"
+              required
+              autocomplete="name"
+            >
+            <span class="form-error" data-error-for="cf-name"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="cf-phone">
+              <i class="fa-solid fa-phone"></i> Téléphone <span class="required">*</span>
+            </label>
+            <input
+              type="tel"
+              id="cf-phone"
+              name="phone"
+              placeholder="Ex : +237 6 XX XX XX XX"
+              required
+              autocomplete="tel"
+            >
+            <span class="form-error" data-error-for="cf-phone"></span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-role">
+              <i class="fa-solid fa-users"></i> Vous êtes <span class="required">*</span>
+            </label>
+            <select id="cf-role" name="role" required>
+              <option value="">— Choisir —</option>
+              <option value="Parent d'élève">Parent d'élève</option>
+              <option value="Élève">Élève</option>
+              <option value="Tuteur / Tutrice">Tuteur / Tutrice</option>
+              <option value="Autre">Autre</option>
+            </select>
+            <span class="form-error" data-error-for="cf-role"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="cf-class">
+              <i class="fa-solid fa-graduation-cap"></i> Classe concernée
+            </label>
+            <select id="cf-class" name="class">
+              <option value="">— Aucune / Non précisée —</option>
+              <option value="6e">6e</option>
+              <option value="5e">5e</option>
+              <option value="4e">4e</option>
+              <option value="3e">3e</option>
+              <option value="2nde">2nde</option>
+              <option value="1ère">1ère</option>
+              <option value="Terminale">Terminale</option>
+            </select>
+          </div>
+        </div>
+
         <div class="form-group">
-          <label for="cf-role">
-            <i class="fa-solid fa-users"></i> Vous êtes <span class="required">*</span>
+          <label for="cf-subject">
+            <i class="fa-solid fa-tag"></i> Objet de votre demande <span class="required">*</span>
           </label>
-          <select id="cf-role" name="role" required>
-            <option value="">— Choisir —</option>
-            <option value="Parent d'élève">Parent d'élève</option>
-            <option value="Élève">Élève</option>
-            <option value="Tuteur / Tutrice">Tuteur / Tutrice</option>
+          <select id="cf-subject" name="subject" required>
+            <option value="">— Choisir un objet —</option>
+            <option value="Inscription">Inscription</option>
+            <option value="Concours d'entrée">Concours d'entrée</option>
+            <option value="Frais de scolarité">Frais de scolarité</option>
+            <option value="Transport scolaire">Transport scolaire</option>
+            <option value="Cantine">Cantine</option>
+            <option value="Rendez-vous">Demande de rendez-vous</option>
             <option value="Autre">Autre</option>
           </select>
-          <span class="form-error" data-error-for="cf-role"></span>
+          <span class="form-error" data-error-for="cf-subject"></span>
         </div>
 
         <div class="form-group">
-          <label for="cf-class">
-            <i class="fa-solid fa-graduation-cap"></i> Classe concernée
+          <label for="cf-message">
+            <i class="fa-solid fa-message"></i> Votre message <span class="required">*</span>
           </label>
-          <select id="cf-class" name="class">
-            <option value="">— Aucune / Non précisée —</option>
-            <option value="6e">6e</option>
-            <option value="5e">5e</option>
-            <option value="4e">4e</option>
-            <option value="3e">3e</option>
-            <option value="2nde">2nde</option>
-            <option value="1ère">1ère</option>
-            <option value="Terminale">Terminale</option>
-          </select>
+          <textarea
+            id="cf-message"
+            name="message"
+            rows="5"
+            placeholder="Écrivez ici votre message..."
+            required
+            maxlength="600"
+          ></textarea>
+          <div class="form-char-count">
+            <span id="cf-char-count">0</span> / 600 caractères
+          </div>
+          <span class="form-error" data-error-for="cf-message"></span>
         </div>
-      </div>
 
-      <div class="form-group">
-        <label for="cf-subject">
-          <i class="fa-solid fa-tag"></i> Objet de votre demande <span class="required">*</span>
-        </label>
-        <select id="cf-subject" name="subject" required>
-          <option value="">— Choisir un objet —</option>
-          <option value="Inscription">Inscription</option>
-          <option value="Concours d'entrée">Concours d'entrée</option>
-          <option value="Frais de scolarité">Frais de scolarité</option>
-          <option value="Transport scolaire">Transport scolaire</option>
-          <option value="Cantine">Cantine</option>
-          <option value="Rendez-vous">Demande de rendez-vous</option>
-          <option value="Autre">Autre</option>
-        </select>
-        <span class="form-error" data-error-for="cf-subject"></span>
-      </div>
-
-      <div class="form-group">
-        <label for="cf-message">
-          <i class="fa-solid fa-message"></i> Votre message <span class="required">*</span>
-        </label>
-        <textarea
-          id="cf-message"
-          name="message"
-          rows="5"
-          placeholder="Écrivez ici votre message..."
-          required
-          maxlength="600"
-        ></textarea>
-        <div class="form-char-count">
-          <span id="cf-char-count">0</span> / 600 caractères
+        <div class="form-actions">
+          <button type="submit" class="btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+            Envoyer via WhatsApp
+          </button>
+          <p class="form-note">
+            <i class="fa-solid fa-lock"></i>
+            En cliquant, WhatsApp s'ouvrira avec votre message pré-rempli.
+          </p>
         </div>
-        <span class="form-error" data-error-for="cf-message"></span>
-      </div>
 
-      <div class="form-actions">
-        <button type="submit" class="btn-whatsapp">
-          <i class="fa-brands fa-whatsapp"></i>
-          Envoyer via WhatsApp
-        </button>
-        <p class="form-note">
-          <i class="fa-solid fa-lock"></i>
-          En cliquant, WhatsApp s'ouvrira avec votre message pré-rempli.
-        </p>
-      </div>
+      </form>
+    </div>
+  </section>
 
-    </form>
-  </div>
-</section>
-
-
-    <!-- FOOTER AVEC VAGUE HAUTE -->
-    <footer class="footer">
+  <!-- FOOTER AVEC VAGUE HAUTE -->
+  <footer class="footer">
 
     <div class="footer-wave">
-        <svg viewBox="0 0 1440 160" preserveAspectRatio="none">
+      <svg viewBox="0 0 1440 160" preserveAspectRatio="none">
         <path d="M0,64 C180,0 360,112 540,48 C720,-16 900,96 1080,32 C1260,-32 1380,64 1440,48 L1440,0 L0,0 Z" fill="#ffffff"></path>
-        </svg>
+      </svg>
     </div>
 
     <div class="footer-container">
-        <div class="footer-col">
-            <div class="footer-logo">
-            <i class="fa-solid fa-graduation-cap"></i>
-            <span>Collège Bilingue Pékékudé</span>
-            </div>
-            <p class="slogan">Former aujourd'hui les leaders de demain.</p>
-            <div class="contact-info">
-            <p><i class="fa-solid fa-phone"></i> +237 6 96 42 96 48</p>
-            <p><i class="fa-solid fa-phone"></i> +237 6 99 12 36 55</p>
-            <p><i class="fa-solid fa-clock"></i> Lun - Ven : 7h30 - 16h00</p>
-            <p><i class="fa-solid fa-envelope"></i> contact@cbp-cm.com</p>
-            </div>
+      <div class="footer-col">
+        <div class="footer-logo">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span>Collège Bilingue Pékékudé</span>
         </div>
+        <p class="slogan">Former aujourd'hui les leaders de demain.</p>
+        <div class="contact-info">
+          <p><i class="fa-solid fa-phone"></i> +237 6 96 42 96 48</p>
+          <p><i class="fa-solid fa-phone"></i> +237 6 99 12 36 55</p>
+          <p><i class="fa-solid fa-clock"></i> Lun - Ven : 7h30 - 16h00</p>
+          <p><i class="fa-solid fa-envelope"></i> contact@cbp-cm.com</p>
+        </div>
+      </div>
 
-        <div class="footer-col">
-            <h3>Quick Links</h3>
-            <ul class="footer-links">
-            <li><a href="#accueil"><i class="fa-solid fa-chevron-right"></i> Accueil</a></li>
-            <li><a href="#about"><i class="fa-solid fa-chevron-right"></i> À propos</a></li>
-            <li><a href="#programmes"><i class="fa-solid fa-chevron-right"></i> Nos programmes</a></li>
-            <li><a href="#galerie"><i class="fa-solid fa-chevron-right"></i> Galerie</a></li>
-            <li><a href="#faq"><i class="fa-solid fa-chevron-right"></i> FAQ</a></li>
-            <li><a href="#contact"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
-            </ul>
-        </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#accueil"><i class="fa-solid fa-chevron-right"></i> Accueil</a></li>
+          <li><a href="#about"><i class="fa-solid fa-chevron-right"></i> À propos</a></li>
+          <li><a href="#programmes"><i class="fa-solid fa-chevron-right"></i> Nos programmes</a></li>
+          <li><a href="#galerie"><i class="fa-solid fa-chevron-right"></i> Galerie</a></li>
+          <li><a href="#faq"><i class="fa-solid fa-chevron-right"></i> FAQ</a></li>
+          <li><a href="#contact"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
+        </ul>
+      </div>
 
-        <div class="footer-col">
-            <h3>Notre Valeur</h3>
-            <ul class="footer-values">
-            <li><i class="fa-solid fa-circle-check"></i> Excellence</li>
-            <li><i class="fa-solid fa-circle-check"></i> Discipline</li>
-            <li><i class="fa-solid fa-circle-check"></i> Respect</li>
-            <li><i class="fa-solid fa-circle-check"></i> Responsabilité</li>
-            <li><i class="fa-solid fa-circle-check"></i> Solidarité</li>
-            </ul>
-        </div>
-        </div>
+      <div class="footer-col">
+        <h3>Notre Valeur</h3>
+        <ul class="footer-values">
+          <li><i class="fa-solid fa-circle-check"></i> Excellence</li>
+          <li><i class="fa-solid fa-circle-check"></i> Discipline</li>
+          <li><i class="fa-solid fa-circle-check"></i> Respect</li>
+          <li><i class="fa-solid fa-circle-check"></i> Responsabilité</li>
+          <li><i class="fa-solid fa-circle-check"></i> Solidarité</li>
+        </ul>
+      </div>
+    </div>
 
-        <div class="footer-bottom">
-        <div class="footer-bottom-container">
-            <p>© 2025 Collège Bilingue Pékékudé. Tous droits réservés.</p>
-            <div class="social-links">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-            </div>
-            <div class="location-footer">
-            <i class="fa-solid fa-location-dot"></i> Foumban, Cameroun
-            </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>© 2025 Collège Bilingue Pékékudé. Tous droits réservés.</p>
+        <div class="social-links">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
+        <div class="location-footer">
+          <i class="fa-solid fa-location-dot"></i> Foumban, Cameroun
         </div>
-    </footer>
-
-  <script src="../js/collège.js"></script>
+      </div>
+    </div>
+  </footer>
 
   <!-- BOUTON RETOUR EN HAUT -->
- <button id="backToTop" class="back-to-top" aria-label="Retour en haut">
+  <button id="backToTop" class="back-to-top" aria-label="Retour en haut">
     <i class="fa-solid fa-arrow-up"></i>
- </button>
+  </button>
 
+  <script src="../js/collège.js"></script>
 </body>
 </html>

@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2. Défilement doux (Smooth Scroll)
+  // 2. Défilement doux
   const allLinks = document.querySelectorAll('a[href^="#"]');
 
   allLinks.forEach(link => {
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 5. FAQ ACCORDÉON AMÉLIORÉ (recherche + catégories + filtres)
+  // 5. FAQ ACCORDÉON AMÉLIORÉ
   const faqItems = document.querySelectorAll('.faq-item');
   const faqSearch = document.getElementById('faqSearch');
   const faqSearchClear = document.getElementById('faqSearchClear');
@@ -119,7 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let activeCategory = 'all';
   let searchQuery = '';
 
-  // --- 5.1 Accordéon (ouverture / fermeture) ---
   faqItems.forEach(item => {
     const question = item.querySelector('.faq-question');
     if (question) {
@@ -140,7 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- 5.2 Filtrage combiné (catégorie + recherche) ---
   function filterFaq() {
     let visibleCount = 0;
 
@@ -186,20 +184,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // --- 5.3 Écoute de la recherche ---
   if (faqSearch) {
     faqSearch.addEventListener('input', (e) => {
       searchQuery = e.target.value.trim().toLowerCase();
-
       if (faqSearchClear) {
         faqSearchClear.classList.toggle('visible', searchQuery.length > 0);
       }
-
       filterFaq();
     });
   }
 
-  // --- 5.4 Effacer la recherche ---
   if (faqSearchClear) {
     faqSearchClear.addEventListener('click', () => {
       faqSearch.value = '';
@@ -210,7 +204,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- 5.5 Filtres par catégorie ---
   faqCatBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       faqCatBtns.forEach(b => b.classList.remove('active'));
@@ -227,10 +220,8 @@ document.addEventListener('DOMContentLoaded', () => {
   tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const targetTab = btn.getAttribute('data-tab');
-
       tabBtns.forEach(b => b.classList.remove('active'));
       tabContents.forEach(c => c.classList.remove('active'));
-
       btn.classList.add('active');
       const targetContent = document.getElementById('tab-' + targetTab);
       if (targetContent) targetContent.classList.add('active');
@@ -247,6 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
       programmes: 'Nos programmes',
       galerie: 'Galerie',
       faq: 'FAQ',
+      contact: 'Contact',      
       inscription: 'Inscription',
     },
     en: {
@@ -255,6 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
       programmes: 'Our programs',
       galerie: 'Gallery',
       faq: 'FAQ',
+      contact: 'Contact',      
       inscription: 'Enrollment',
     }
   };
@@ -289,10 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 8. FORMULAIRE DE CONTACT → WHATSAPP
   const whatsappForm = document.getElementById('whatsappForm');
-
-  // 🔴 REMPLACE ce numéro par le numéro WhatsApp réel de l'établissement
-  // Format international SANS le "+" ni espaces : ex "237699123655"
-  const WHATSAPP_NUMBER = '237699123655';
+  const WHATSAPP_NUMBER = '237699123655'; // 🔴 À REMPLACER par le vrai numéro
 
   if (whatsappForm) {
     const nameInput = document.getElementById('cf-name');
@@ -304,22 +294,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const charCount = document.getElementById('cf-char-count');
     const submitBtn = whatsappForm.querySelector('.btn-whatsapp');
 
-    // --- Compteur de caractères ---
     if (messageInput && charCount) {
       messageInput.addEventListener('input', () => {
         const len = messageInput.value.length;
         charCount.textContent = len;
         charCount.classList.remove('warn', 'max');
-
-        if (len >= 580) {
-          charCount.classList.add('max');
-        } else if (len >= 480) {
-          charCount.classList.add('warn');
-        }
+        if (len >= 580) charCount.classList.add('max');
+        else if (len >= 480) charCount.classList.add('warn');
       });
     }
 
-    // --- Validation en direct : retire l'erreur quand on tape ---
     [nameInput, phoneInput, roleSelect, subjectSelect, messageInput].forEach(field => {
       if (!field) return;
       const event = field.tagName === 'SELECT' ? 'change' : 'input';
@@ -330,7 +314,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // --- Fonction de validation ---
     function validateForm() {
       let isValid = true;
       const errors = {};
@@ -378,10 +361,8 @@ document.addEventListener('DOMContentLoaded', () => {
       return isValid;
     }
 
-    // --- Soumission du formulaire ---
     whatsappForm.addEventListener('submit', (e) => {
       e.preventDefault();
-
       if (!validateForm()) return;
 
       submitBtn.classList.add('loading');
@@ -414,17 +395,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
       setTimeout(() => {
         window.open(whatsappURL, '_blank');
-
         submitBtn.classList.remove('loading');
         showSuccessMessage();
-
         whatsappForm.reset();
         if (charCount) charCount.textContent = '0';
         charCount.classList.remove('warn', 'max');
       }, 400);
     });
 
-    // --- Message de succès ---
     function showSuccessMessage() {
       const success = document.createElement('div');
       success.className = 'form-success show';
@@ -432,14 +410,71 @@ document.addEventListener('DOMContentLoaded', () => {
         <i class="fa-solid fa-circle-check"></i>
         <span>Votre message a été préparé ! WhatsApp va s'ouvrir dans un instant.</span>
       `;
-
       whatsappForm.insertBefore(success, whatsappForm.firstChild);
-
       setTimeout(() => {
         success.classList.remove('show');
         setTimeout(() => success.remove(), 400);
       }, 5000);
     }
+  }
+
+  // 9. BANDEAU D'ANNONCE
+  const announcementBar = document.getElementById('announcementBar');
+  const announcementClose = document.getElementById('announcementClose');
+
+  if (announcementBar && announcementClose) {
+    const isClosed = localStorage.getItem('cbp-announcement-closed') === 'true';
+    if (isClosed) {
+      announcementBar.classList.add('hidden');
+    }
+
+    announcementClose.addEventListener('click', () => {
+      announcementBar.classList.add('hidden');
+      localStorage.setItem('cbp-announcement-closed', 'true');
+    });
+  }
+
+  // 10. COMPTEURS ANIMÉS (CHIFFRES CLÉS)
+  const statNumbers = document.querySelectorAll('.stat-number');
+
+  if (statNumbers.length > 0) {
+    const animateCounter = (el) => {
+      const target = parseInt(el.getAttribute('data-target'), 10);
+      const duration = 1800;
+      const startTime = performance.now();
+
+      const updateCount = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 4);
+        const current = Math.floor(eased * target);
+        el.textContent = current.toLocaleString('fr-FR');
+        if (progress < 1) {
+          requestAnimationFrame(updateCount);
+        } else {
+          el.textContent = target.toLocaleString('fr-FR');
+        }
+      };
+      requestAnimationFrame(updateCount);
+    };
+
+    const statsObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const statCard = entry.target;
+          const number = statCard.querySelector('.stat-number');
+          if (number && !number.dataset.animated) {
+            number.dataset.animated = 'true';
+            animateCounter(number);
+          }
+          observer.unobserve(statCard);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    document.querySelectorAll('.stat-card').forEach(card => {
+      statsObserver.observe(card);
+    });
   }
 
 });
